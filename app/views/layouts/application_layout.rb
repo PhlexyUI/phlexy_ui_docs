@@ -27,7 +27,21 @@ class ApplicationLayout < ApplicationView
         main do
           render_flash
 
-          yield
+          Drawer(id: :drawer, lg: :open) do |drawer|
+            drawer.toggle
+            drawer.content class: "px-8" do
+              Navbar do
+                render Nav.new
+              end
+
+              yield
+            end
+
+            drawer.side do
+              drawer.overlay
+              render Sidebar.new
+            end
+          end
         end
       end
     end

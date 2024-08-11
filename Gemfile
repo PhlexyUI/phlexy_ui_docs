@@ -57,7 +57,9 @@ gem "factory_bot_rails"
 gem "faker"
 gem "stimulus-rails"
 gem "turbo-rails"
-gem "phlexy_ui"
+gem "phlexy_ui", github: "PhlexyUI/phlexy_ui", branch: "main"
+gem "rouge"
+gem "method_source"
 
 group :development, :test do
   gem "dotenv"
