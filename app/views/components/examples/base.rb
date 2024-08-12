@@ -1,7 +1,12 @@
 module Examples
   class Base < ApplicationComponent
+    def initialize(component:)
+      @component = component
+    end
+
     def view_template
       render DemoComponent.new(
+        component:,
         title:,
         example_method: method(:example)
       )
@@ -14,5 +19,9 @@ module Examples
     def example
       raise NotImplementedError, "Subclasses must implement an :example method."
     end
+
+    private
+
+    attr_reader :component
   end
 end

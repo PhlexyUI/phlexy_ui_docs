@@ -8,10 +8,7 @@ class Category
       Category.new(
         name: category_hash.fetch(:name),
         components: category_hash.fetch(:components).map do |component_name|
-          Component.new(
-            id: component_name.parameterize,
-            name: component_name
-          )
+          Component.from_name(component_name)
         end
       )
     end

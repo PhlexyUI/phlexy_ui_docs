@@ -5,7 +5,8 @@ module Examples
     HIGHLIGHT_CSS_CLASS = "highlight"
     CODE_LINE_CSS_CLASS = "line-%i"
 
-    def initialize(title:, example_method:)
+    def initialize(component:, title:, example_method:)
+      @component = component
       @title = title
       @example_method = example_method
       @source = extract_method_source(example_method)
@@ -32,7 +33,7 @@ module Examples
 
     private
 
-    attr_reader :title, :example_method, :source, :formatter, :lexer, :css
+    attr_reader :component, :title, :example_method, :source, :formatter, :lexer, :css
 
     def extract_method_source(example_method)
       source_code = example_method.source
@@ -71,7 +72,7 @@ module Examples
     def render_header
       header do
         h2 class: "text-sm font-bold mb-4", id: title.parameterize do
-          link_to "# ", root_path(anchor: title.parameterize)
+          link_to "# ", examples_path(component, anchor: title.parameterize)
 
           span do
             title
