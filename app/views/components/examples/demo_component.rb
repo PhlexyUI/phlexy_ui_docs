@@ -26,8 +26,15 @@ module Examples
 
       section class: "space-y-4" do
         render_header
-        render_code
-        render_demo
+
+        div class: "flex gap-4" do
+          div class: "w-8/12" do
+            render_code
+          end
+          div class: "w-4/12" do
+            render_demo
+          end
+        end
       end
     end
 
