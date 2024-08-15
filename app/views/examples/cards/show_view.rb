@@ -6,7 +6,7 @@ module Examples
       end
 
       def view_template
-        Title do
+        Title :"4x", :extrabold do
           "Card"
         end
 

@@ -12,6 +12,14 @@ class Sidebar < ApplicationView
       Menu do |menu|
         menu.item do
           menu.submenu :collapsible, :open do |submenu|
+            submenu.title { "Docs" }
+
+            submenu.item do
+              link_to "Installation", docs_installation_path
+            end
+          end
+
+          menu.submenu :collapsible, :open do |submenu|
             submenu.title { "Components" }
 
             Category.all.each do |category|

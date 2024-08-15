@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "examples#show", component: "card"
   get "components/:component" => "examples#show", :as => "examples"
+  namespace :docs do
+    get "installation"
+  end
 end
