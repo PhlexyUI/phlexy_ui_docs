@@ -2,20 +2,20 @@ class ExamplesController < ApplicationController
   before_action :verify_component_exists
 
   def show
-    render klass.new(component:)
+    render view_class.new(component:)
   end
 
   private
 
   def verify_component_exists
-    return if klass
+    return if view_class
 
-    redirect_to root_path, alert: "The component #{component_name} doesn't exist!"
+    render Application::NotFoundView.new, status: :not_found
   end
 
-  def klass
-    case component_name
-    when "card" then Examples::Cards::ShowView
+  def view_class
+    case component_name.to_sym
+    when :card then Examples::Cards::ShowView
     end
   end
 
