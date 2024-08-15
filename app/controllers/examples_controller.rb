@@ -14,9 +14,7 @@ class ExamplesController < ApplicationController
   end
 
   def view_class
-    case component_name.to_sym
-    when :card then Examples::Cards::ShowView
-    end
+    "Examples::#{component_name.classify.pluralize}::ShowView".safe_constantize
   end
 
   def component_name

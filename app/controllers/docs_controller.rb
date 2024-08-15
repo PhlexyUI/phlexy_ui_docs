@@ -14,12 +14,10 @@ class DocsController < ApplicationController
   end
 
   def view_class
-    case doc_name.to_sym
-    when :installation then Docs::InstallationView
-    end
+    "Docs::#{doc_name.classify.pluralize}::ShowView".safe_constantize
   end
 
   def doc_name
-    params[:doc_name].to_sym
+    params[:doc_name]
   end
 end
