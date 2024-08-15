@@ -6,6 +6,4 @@ class ApplicationView < ApplicationComponent
   # By default, it inherits from `ApplicationComponent`, but you
   # can change that to `Phlex::HTML` if you want to keep views and
   # components independent.
-
-  include Shared
 end
