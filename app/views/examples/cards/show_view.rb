@@ -1,10 +1,6 @@
 module Examples
   module Cards
-    class ShowView < ApplicationView
-      def initialize(component:)
-        @component = component
-      end
-
+    class ShowView < BaseView
       def view_template
         Title :"4x", :extrabold do
           "Card"
@@ -28,16 +24,6 @@ module Examples
               ResponsiveComponent
             ]
           end
-        end
-      end
-
-      private
-
-      attr_reader :component
-
-      def render_examples(example_components, **)
-        example_components.each do |example_component|
-          render example_component.new(**)
         end
       end
     end
