@@ -52,7 +52,17 @@ module Examples
     end
 
     def render_demo
-      div class: "bg-base-200 flex justify-center items-center p-8" do
+      classes = [
+        "bg-base-200",
+        "flex",
+        "flex-wrap",
+        "gap-4",
+        "justify-center",
+        "items-center",
+        "p-8"
+      ]
+
+      div class: classes do
         @example_method.call
       end
     end
