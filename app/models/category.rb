@@ -23,6 +23,12 @@ class Category
         "Card",
         "Button"
       ]
+    },
+    {
+      name: "Feedback",
+      components: [
+        "Loading"
+      ]
     }
   ]
 end
