@@ -59,7 +59,8 @@ module Examples
         "gap-4",
         "justify-center",
         "items-center",
-        "p-8"
+        "p-8",
+        "rounded-lg"
       ]
 
       div class: classes do
