@@ -53,7 +53,7 @@ module Examples
 
     def render_demo
       classes = [
-        "bg-base-200",
+        "bg-base-300",
         "flex",
         "flex-wrap",
         "gap-4",

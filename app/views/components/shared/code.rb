@@ -58,7 +58,7 @@ module Shared
           }
   
           .highlight {
-            background-color: oklch(var(--b2));
+            background-color: oklch(var(--b3));
           }
   
           .highlight .gi {
