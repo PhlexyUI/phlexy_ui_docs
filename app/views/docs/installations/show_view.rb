@@ -48,7 +48,7 @@ module Docs
         end
 
         Tabs :bordered, :lifted, id: :installation, class: "mb-8" do |tabs|
-          tabs.tab "JS Bundler", :checked, class: "!w-32" do |tab|
+          tabs.tab "JS Bundler", :open, class: "!w-32" do |tab|
             tab.content class: "bg-base-100 border-base-300 rounded-box p-6" do
               Title :lg, :bold, as: :h4 do
                 "TailwindCSS"
