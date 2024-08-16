@@ -1,0 +1,9 @@
+Description:
+    Generates a new component example view and a basic component.
+
+Example:
+    bin/rails generate example_view Card
+
+    This will create:
+        app/views/examples/ratings/show_view.rb
+        app/views/components/examples/ratings/basic_component.rb
