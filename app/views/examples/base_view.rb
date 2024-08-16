@@ -8,9 +8,11 @@ module Examples
 
     attr_reader :component
 
-    def render_examples(example_components, **)
-      example_components.each do |example_component|
-        render example_component.new(**)
+    def render_examples(example_components)
+      render ContainerComponent.new do
+        example_components.each do |example_component|
+          render example_component.new(component:)
+        end
       end
     end
   end
