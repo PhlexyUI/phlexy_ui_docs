@@ -19,7 +19,10 @@ class Category
   CATEGORIES = [
     {
       name: "Data display",
-      components: ["Card"]
+      components: [
+        "Card",
+        "Button"
+      ]
     }
   ]
 end
