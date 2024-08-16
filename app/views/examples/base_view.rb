@@ -4,9 +4,9 @@ module Examples
       @component = component
     end
 
-    private
-
-    attr_reader :component
+    def title(&)
+      Title :"4x", :extrabold, &
+    end
 
     def render_examples(example_components)
       render ContainerComponent.new do
@@ -15,5 +15,9 @@ module Examples
         end
       end
     end
+
+    private
+
+    attr_reader :component
   end
 end

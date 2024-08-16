@@ -2,7 +2,7 @@ module Examples
   module Cards
     class ShowView < BaseView
       def view_template
-        Title :"4x", :extrabold do
+        title do
           "Card"
         end
 
