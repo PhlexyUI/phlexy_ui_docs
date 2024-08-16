@@ -3,7 +3,7 @@ class Sidebar < ApplicationView
 
   def view_template
     aside class: "w-80" do
-      Button(:ghost, class: "text-xl mt-2") do
+      Button(:ghost, class: "text-lg md:text-2xl mt-2") do
         "PhlexyUI"
       end
 
