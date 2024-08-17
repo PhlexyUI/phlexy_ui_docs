@@ -18,10 +18,15 @@ class Category
 
   CATEGORIES = [
     {
+      name: "Actions",
+      components: [
+        "Button"
+      ]
+    },
+    {
       name: "Data display",
       components: [
-        "Card",
-        "Button"
+        "Card"
       ]
     },
     {
