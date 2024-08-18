@@ -20,7 +20,8 @@ class Category
     {
       name: "Actions",
       components: [
-        "Button"
+        "Button",
+        "Dropdown"
       ]
     },
     {
