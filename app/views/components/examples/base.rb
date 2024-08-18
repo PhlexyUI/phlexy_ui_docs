@@ -8,12 +8,16 @@ module Examples
       render DemoComponent.new(
         component:,
         title:,
+        subtitle:,
         example_method: method(:example)
       )
     end
 
     def title
       raise NotImplementedError, "Subclasses must implement a :title method."
+    end
+
+    def subtitle
     end
 
     def example

@@ -2,9 +2,10 @@ module Examples
   class DemoComponent < ApplicationComponent
     include Phlex::Rails::Helpers::LinkTo
 
-    def initialize(component:, title:, example_method:)
+    def initialize(component:, title:, example_method:, subtitle: nil)
       @component = component
       @title = title
+      @subtitle = subtitle
       @example_method = example_method
       @source = extract_method_source(example_method)
     end
@@ -26,7 +27,7 @@ module Examples
 
     private
 
-    attr_reader :component, :title, :example_method, :source
+    attr_reader :component, :title, :subtitle, :example_method, :source
 
     def extract_method_source(example_method)
       source_code = example_method.source
@@ -42,6 +43,12 @@ module Examples
 
           span do
             title
+          end
+        end
+
+        if subtitle
+          small do
+            subtitle
           end
         end
       end
