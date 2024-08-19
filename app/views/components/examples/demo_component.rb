@@ -14,7 +14,7 @@ module Examples
       section class: "space-y-4" do
         render_header
 
-        div class: "flex flex-col md:flex-row gap-4" do
+        div class: "flex flex-col flex-col-reverse md:flex-row gap-4" do
           div class: "w-full md:w-7/12" do
             render_code
           end
