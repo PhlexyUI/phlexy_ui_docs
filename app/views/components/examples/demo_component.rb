@@ -14,11 +14,11 @@ module Examples
       section class: "space-y-4" do
         render_header
 
-        div class: "flex gap-4" do
-          div class: "w-7/12" do
+        div class: "flex flex-col md:flex-row gap-4" do
+          div class: "w-full md:w-7/12" do
             render_code
           end
-          div class: "w-5/12" do
+          div class: "w-full md:w-5/12" do
             render_demo
           end
         end
@@ -66,8 +66,11 @@ module Examples
         "gap-4",
         "justify-center",
         "items-center",
+        "content-center",
         "p-8",
-        "rounded-lg"
+        "rounded-lg",
+        "h-96",
+        "md:h-auto"
       ]
 
       div class: classes do
