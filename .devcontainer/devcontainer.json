@@ -1,0 +1,11 @@
+{
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "PhlexyUI/phlexy_ui": {
+          "permissions": "write-all"
+        }
+      }
+    }
+  }
+}
