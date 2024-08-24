@@ -122,11 +122,15 @@ GEM
     faker (3.4.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
     friendly_id (5.5.1)
       activerecord (>= 4.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     google-protobuf (4.27.3-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.27.3-x86_64-linux)
       bigdecimal
       rake (>= 13)
     i18n (1.14.5)
@@ -176,6 +180,8 @@ GEM
       net-protocol
     nio4r (2.7.3)
     nokogiri (1.16.7-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     oj (3.16.4)
       bigdecimal (>= 3.0)
@@ -297,6 +303,7 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     sqlite3 (1.7.3-arm64-darwin)
+    sqlite3 (1.7.3-x86_64-linux)
     standard (1.39.2)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -347,6 +354,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-23
+  x86_64-linux
 
 DEPENDENCIES
   annotate
