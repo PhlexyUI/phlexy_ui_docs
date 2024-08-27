@@ -6,7 +6,7 @@ module Examples
       end
 
       def example
-        Card class: "bg-base-100 w-96 shadow-xl" do |card|
+        Card :base_100, class: "w-96 shadow-xl" do |card|
           figure class: "px-10 pt-10" do
             img(src:, alt: "Shoes", class: "rounded-xl")
           end

@@ -6,7 +6,7 @@ module Examples
       end
 
       def example
-        Card class: "bg-primary text-primary-content w-96" do |card|
+        Card :primary, class: "w-96" do |card|
           card.body do
             card.title do
               "Card title!"

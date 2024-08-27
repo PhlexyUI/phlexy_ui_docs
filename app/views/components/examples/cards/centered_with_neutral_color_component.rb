@@ -6,7 +6,7 @@ module Examples
       end
 
       def example
-        Card class: "bg-neutral text-neutral-content w-96" do |card|
+        Card :neutral, class: "w-96" do |card|
           card.body class: "items-center text-center" do
             card.title do
               "Cookies!"

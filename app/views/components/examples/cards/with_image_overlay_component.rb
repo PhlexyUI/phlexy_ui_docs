@@ -6,7 +6,7 @@ module Examples
       end
 
       def example
-        Card :image_full, class: "bg-base-100 w-96 shadow-xl" do |card|
+        Card :image_full, :base_100, class: "w-96 shadow-xl" do |card|
           card.body do
             card.title do
               "Shoes!"
