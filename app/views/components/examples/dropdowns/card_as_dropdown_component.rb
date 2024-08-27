@@ -11,7 +11,7 @@ module Examples
             "Click"
           end
 
-          dropdown.content as: Card, class: "bg-primary text-primary-content w-64 p-2 shadow" do |card|
+          dropdown.content :primary, as: Card, class: "w-64 p-2 shadow" do |card|
             card.body do
               h3 class: "card-title" do
                 "Card title!"
