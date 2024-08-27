@@ -27,6 +27,7 @@ class Category
     {
       name: "Data display",
       components: [
+        "Badge",
         "Card"
       ]
     },
