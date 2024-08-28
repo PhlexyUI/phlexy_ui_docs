@@ -36,6 +36,12 @@ class Category
       components: [
         "Loading"
       ]
+    },
+    {
+      name: "Navigation",
+      components: [
+        "Menu"
+      ]
     }
   ]
 end
