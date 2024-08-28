@@ -19,7 +19,7 @@ module Examples
                 "Dropdown"
               end
 
-              dropdown.menu class: "bg-base-100 rounded-box mt-4 w-52 p-2 shadow" do |menu|
+              dropdown.menu :base_100, class: "rounded-box mt-4 w-52 p-2 shadow" do |menu|
                 menu.item do
                   a do
                     "Item 1"

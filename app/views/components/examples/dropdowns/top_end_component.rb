@@ -11,7 +11,7 @@ module Examples
             "Click"
           end
 
-          dropdown.menu class: "bg-base-100 rounded-box w-52 shadow" do |menu|
+          dropdown.menu :base_100, class: "rounded-box w-52 shadow" do |menu|
             menu.item do
               a do
                 "Item 1"

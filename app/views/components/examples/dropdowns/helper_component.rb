@@ -13,7 +13,7 @@ module Examples
             svg_info
           end
 
-          dropdown.content :compact, as: Card, class: "bg-base-100 rounded-box w-64 shadow" do |card|
+          dropdown.content :compact, :base_100, as: Card, class: "rounded-box w-64 shadow" do |card|
             card.body do
               card.title do
                 "You needed more info?"
