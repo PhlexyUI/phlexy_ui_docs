@@ -28,7 +28,8 @@ module Examples
           HorizontalComponent,
           HorizontalSubmenuComponent,
           MegaMenuWithSubmenuResponsiveComponent,
-          CollapsibleWithSubmenuResponsive
+          CollapsibleWithSubmenuResponsive,
+          WithoutPaddingAndBorderRadiusComponent
         ]
       end
     end

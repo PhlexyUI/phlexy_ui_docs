@@ -70,7 +70,8 @@ module Examples
         "p-8",
         "rounded-lg",
         "h-96",
-        "md:h-auto"
+        "md:h-auto",
+        "lg:overflow-x-scroll"
       ]
 
       div class: classes do
