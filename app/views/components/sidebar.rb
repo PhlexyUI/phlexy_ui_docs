@@ -10,16 +10,18 @@ class Sidebar < ApplicationView
       div class: "h-4"
 
       Menu do |menu|
-        menu.item do
-          menu.submenu :collapsible, :open do |submenu|
+        menu.item do |item|
+          item.submenu :collapsible, :open do |submenu|
             submenu.title { "Docs" }
 
             submenu.item do
               link_to "Installation", docs_path(:installation)
             end
           end
+        end
 
-          menu.submenu :collapsible, :open do |submenu|
+        menu.item do |item|
+          item.submenu :collapsible, :open do |submenu|
             submenu.title { "Components" }
 
             Category.all.each do |category|
