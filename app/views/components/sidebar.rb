@@ -7,6 +7,10 @@ class Sidebar < ApplicationView
         "PhlexyUI"
       end
 
+      span do
+        "v0.1.2"
+      end
+
       div class: "h-4"
 
       Menu do |menu|
