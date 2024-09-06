@@ -64,7 +64,7 @@ module Examples
         "flex",
         "flex-wrap",
         "gap-4",
-        "justify-center",
+        "[justify-content:safe_center]",
         "items-center",
         "content-center",
         "p-8",
