@@ -40,7 +40,8 @@ class Category
     {
       name: "Navigation",
       components: [
-        "Menu"
+        "Menu",
+        "Link"
       ]
     }
   ]
