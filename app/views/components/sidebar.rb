@@ -8,7 +8,7 @@ class Sidebar < ApplicationView
       end
 
       span do
-        "v0.1.2"
+        "v#{PhlexyUI::VERSION}"
       end
 
       div class: "h-4"
