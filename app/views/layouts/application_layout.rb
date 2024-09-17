@@ -29,14 +29,16 @@ class ApplicationLayout < ApplicationView
 
           Drawer(id: :drawer, lg: :open) do |drawer|
             drawer.toggle
-            drawer.content class: "px-4 sm:px-6 md:px-8 pb-8" do
+            drawer.content do
               Navbar do
                 drawer.button :ghost, :square, class: "lg:hidden" do
                   burger_svg
                 end
               end
 
-              yield
+              div class: "px-4 sm:px-6 md:px-8 pb-8" do
+                yield
+              end
             end
 
             drawer.side do
