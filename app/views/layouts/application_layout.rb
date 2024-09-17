@@ -36,7 +36,7 @@ class ApplicationLayout < ApplicationView
                 end
               end
 
-              div class: "px-4 sm:px-6 md:px-8 pb-8" do
+              content_wrapper do
                 yield
               end
             end
@@ -66,6 +66,12 @@ class ApplicationLayout < ApplicationView
         stroke_width: "2",
         d: "M4 6h16M4 12h16M4 18h16"
       )
+    end
+  end
+
+  def content_wrapper(&block)
+    div class: "px-4 sm:px-6 md:px-8 pb-8" do
+      yield
     end
   end
 
