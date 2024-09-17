@@ -1,4 +1,6 @@
-class ExampleComponentGenerator < Rails::Generators::NamedBase
+require "rails/generators"
+
+class Generators::ExampleComponent::ExampleComponentGenerator < Rails::Generators::NamedBase
   source_root File.expand_path("templates", __dir__)
 
   argument :title, type: :string, default: "", banner: "Title of the component"
