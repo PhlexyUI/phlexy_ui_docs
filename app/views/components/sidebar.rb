@@ -1,14 +1,23 @@
 class Sidebar < ApplicationView
+  include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::LinkTo
 
   def view_template
     aside class: "w-80 bg-base-100 h-[100dvh]" do
-      Button(:ghost, as: :a, href: root_path, class: "text-lg md:text-2xl mt-2") do
-        "PhlexyUI"
-      end
+      div class: "flex justify-start items-center" do
+        Button(
+          :ghost,
+          as: :a,
+          href: root_path,
+          class: "text-lg md:text-2xl font-bold mt-2"
+        ) do
+          image_tag "phlexy_ui_logo.png", class: "w-12 h-12"
+          plain "PhlexyUI"
+        end
 
-      span do
-        "v#{PhlexyUI::VERSION}"
+        span class: "mt-2" do
+          "v#{PhlexyUI::VERSION}"
+        end
       end
 
       div class: "h-4"

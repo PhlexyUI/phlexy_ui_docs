@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", :as => :pwa_manifest
 
   # Defines the root path route ("/")
-  root "examples#show", component: "card"
+  root "landings#show"
   get "components/:component" => "examples#show", :as => "examples"
   get "docs/:doc_name" => "docs#show", :as => "docs"
+  get "landing" => "landing#show", :as => "landing"
 end
