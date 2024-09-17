@@ -8,7 +8,7 @@ class ApplicationLayout < ApplicationView
   def view_template(&block)
     doctype
 
-    html do
+    html class: "overscroll-none" do
       head do
         title { "Rails7 + Vite" }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
