@@ -2,7 +2,6 @@
 
 # Ignore git directory.
 /.git/
-/.gitignore
 
 # Ignore bundler config.
 /.bundle
@@ -37,12 +36,8 @@
 !/app/assets/builds/.keep
 /public/assets
 
-# Ignore CI service files.
-/.github
-
-# Ignore development files
-/.devcontainer
-
-# Ignore Docker-related files
-/.dockerignore
-/Dockerfile*
+# Vite Ruby
+/public/vite*
+# Vite uses dotenv and suggests to ignore local-only env files. See
+# https://vitejs.dev/guide/env-and-mode.html#env-files
+*.local

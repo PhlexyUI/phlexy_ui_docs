@@ -71,4 +71,6 @@ end
 group :development do
   gem "standard", ">= 1.35.1"
   gem "annotate"
+  gem "dockerfile-rails", ">= 1.6"
 end
+
