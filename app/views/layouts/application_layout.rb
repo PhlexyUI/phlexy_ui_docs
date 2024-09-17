@@ -10,7 +10,7 @@ class ApplicationLayout < ApplicationView
 
     html class: "overscroll-none" do
       head do
-        title { "Rails7 + Vite" }
+        title { "PhlexyUI Docs" }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
         csp_meta_tag
         csrf_meta_tags
