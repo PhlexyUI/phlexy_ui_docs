@@ -31,7 +31,9 @@ class ApplicationLayout < ApplicationView
             drawer.toggle
             drawer.content class: "px-4 sm:px-6 md:px-8 pb-8" do
               Navbar do
-                render Nav.new
+                drawer.button :ghost, :square, class: "lg:hidden" do
+                  burger_svg
+                end
               end
 
               yield
@@ -48,6 +50,22 @@ class ApplicationLayout < ApplicationView
   end
 
   private
+
+  def burger_svg
+    svg(
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewbox: "0 0 24 24",
+      class: "inline-block w-6 h-6 stroke-current"
+    ) do |s|
+      s.path(
+        stroke_linecap: "round",
+        stroke_linejoin: "round",
+        stroke_width: "2",
+        d: "M4 6h16M4 12h16M4 18h16"
+      )
+    end
+  end
 
   def render_flash
     flash.each do |type, msg|
