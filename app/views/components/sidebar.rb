@@ -2,7 +2,7 @@ class Sidebar < ApplicationView
   include Phlex::Rails::Helpers::LinkTo
 
   def view_template
-    aside class: "w-80" do
+    aside class: "w-80 bg-base-100 h-[100dvh]" do
       Button(:ghost, as: :a, href: root_path, class: "text-lg md:text-2xl mt-2") do
         "PhlexyUI"
       end
