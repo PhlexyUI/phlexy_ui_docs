@@ -29,7 +29,7 @@ class ApplicationLayout < ApplicationView
 
           Drawer(id: :drawer, lg: :open) do |drawer|
             drawer.toggle
-            drawer.content class: "px-4 sm:px-6 md:px-8" do
+            drawer.content class: "px-4 sm:px-6 md:px-8 pb-8" do
               Navbar do
                 render Nav.new
               end
