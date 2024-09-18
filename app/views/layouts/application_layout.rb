@@ -94,7 +94,7 @@ class ApplicationLayout < ApplicationView
           Drawer id: :drawer, lg: :open do |drawer|
             drawer.toggle
             drawer.content do
-              Navbar class: "fixed top-0 z-10 bg-base-100 lg:w-[calc(100%-20rem)]" do |navbar|
+              Navbar class: "fixed top-0 z-20 bg-base-100 lg:w-[calc(100%-20rem)]" do |navbar|
                 navbar.start do
                   drawer.button :ghost, :square, class: "lg:hidden" do
                     burger_svg
@@ -122,7 +122,7 @@ class ApplicationLayout < ApplicationView
               end
             end
 
-            drawer.side do
+            drawer.side class: "z-30" do
               drawer.overlay
               render Sidebar.new
             end
@@ -175,7 +175,7 @@ class ApplicationLayout < ApplicationView
       classes = [
         "fixed",
         "top-0",
-        "z-10",
+        "z-40",
         "alert",
         "rounded-none",
         (type == "alert") ? "alert-error" : "alert-info"
