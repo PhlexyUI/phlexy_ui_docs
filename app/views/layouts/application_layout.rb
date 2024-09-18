@@ -8,7 +8,7 @@ class ApplicationLayout < ApplicationView
   def view_template(&block)
     doctype
 
-    html class: "overscroll-none" do
+    html class: "overscroll-auto sm:overscroll-none" do
       head do
         title { "PhlexyUI Docs" }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
