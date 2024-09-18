@@ -11,7 +11,7 @@ module Examples
     end
 
     def view_template
-      section class: "space-y-4" do
+      section do
         render_header
 
         div class: "flex flex-col flex-col-reverse md:flex-row gap-4" do
@@ -37,7 +37,7 @@ module Examples
     end
 
     def render_header
-      header do
+      header class: "sticky top-16 z-10 bg-base-100 pb-4" do
         h2 class: "text-sm font-bold mb-4", id: title.parameterize do
           link_to "# ", examples_path(component, anchor: title.parameterize)
 
@@ -69,7 +69,9 @@ module Examples
         "content-center",
         "p-8",
         "rounded-lg",
-        "h-auto",
+        "min-h-[24rem]",
+        "rounded-2xl",
+        "overflow-x-hidden",
         "lg:overflow-x-scroll"
       ]
 
