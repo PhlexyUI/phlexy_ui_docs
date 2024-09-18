@@ -94,7 +94,7 @@ class ApplicationLayout < ApplicationView
           Drawer id: :drawer, lg: :open do |drawer|
             drawer.toggle
             drawer.content do
-              Navbar do |navbar|
+              Navbar class: "fixed top-0 z-10 bg-base-100 lg:w-[calc(100%-20rem)]" do |navbar|
                 navbar.start do
                   drawer.button :ghost, :square, class: "lg:hidden" do
                     burger_svg
@@ -165,7 +165,7 @@ class ApplicationLayout < ApplicationView
   end
 
   def content_wrapper(&block)
-    div class: "px-4 sm:px-6 md:px-8 pb-8" do
+    div class: "px-4 sm:px-6 md:px-8 pb-8 mt-20" do
       yield
     end
   end
