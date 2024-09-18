@@ -69,8 +69,7 @@ module Examples
         "content-center",
         "p-8",
         "rounded-lg",
-        "h-96",
-        "md:h-auto",
+        "h-auto",
         "lg:overflow-x-scroll"
       ]
 
