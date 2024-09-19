@@ -2,47 +2,21 @@ class Category
   include ActiveModel::Model
 
   attr_accessor :name, :components
+  attr_reader :id
 
-  def self.all
-    CATEGORIES.map do |category_hash|
-      Category.new(
-        name: category_hash.fetch(:name),
-        components: category_hash.fetch(:components).map do |component_name|
-          Component.from_name(component_name)
-        end
-      )
-    end
+  def initialize(name:)
+    super
+    @id = name.parameterize
+    @components = []
   end
 
-  private
+  @@registry = {}
 
-  CATEGORIES = [
-    {
-      name: "Actions",
-      components: [
-        "Button",
-        "Dropdown"
-      ]
-    },
-    {
-      name: "Data display",
-      components: [
-        "Badge",
-        "Card"
-      ]
-    },
-    {
-      name: "Feedback",
-      components: [
-        "Loading"
-      ]
-    },
-    {
-      name: "Navigation",
-      components: [
-        "Menu",
-        "Link"
-      ]
-    }
-  ]
+  def self.from_name(name)
+    @@registry[name] ||= new(name:)
+  end
+
+  def self.all
+    @@registry.values
+  end
 end
