@@ -3,7 +3,7 @@ class Sidebar < ApplicationView
   include Phlex::Rails::Helpers::LinkTo
 
   def view_template
-    aside class: "w-80 bg-base-100 h-[100dvh] overscroll-contain" do
+    aside class: "w-80 bg-base-100 overscroll-contain" do
       div class: "flex justify-start items-center" do
         Button(
           :ghost,
