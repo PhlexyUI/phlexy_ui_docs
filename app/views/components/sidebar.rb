@@ -46,7 +46,11 @@ class Sidebar < ApplicationView
                 menu.submenu do |submenu|
                   category.components.each do |component|
                     submenu.item do
-                      link_to component.name, examples_path(component)
+                      if component.enabled
+                        link_to component.name, examples_path(component)
+                      else
+                        link_to component.name, "#", class: "opacity-50 !cursor-default"
+                      end
                     end
                   end
                 end
