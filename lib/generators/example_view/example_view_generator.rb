@@ -1,6 +1,4 @@
-require "rails/generators"
-
-class Generators::ExampleView::ExampleViewGenerator < Rails::Generators::NamedBase
+class ExampleViewGenerator < Rails::Generators::NamedBase
   source_root File.expand_path("templates", __dir__)
 
   def create_view_file
