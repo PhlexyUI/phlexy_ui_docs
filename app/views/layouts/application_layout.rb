@@ -4,6 +4,7 @@ class ApplicationLayout < ApplicationView
   include Phlex::Rails::Layout
   include Phlex::Rails::Helpers::TurboRefreshesWith
   include Phlex::Rails::Helpers::Flash
+  include Phlex::Rails::Helpers::TurboFrameTag
 
   def view_template(&block)
     doctype
@@ -118,7 +119,9 @@ class ApplicationLayout < ApplicationView
               end
 
               content_wrapper do
-                yield
+                turbo_frame_tag :content do
+                  yield
+                end
               end
             end
 

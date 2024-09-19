@@ -3,7 +3,7 @@ class Sidebar < ApplicationView
   include Phlex::Rails::Helpers::LinkTo
 
   def view_template
-    aside class: "w-80 bg-base-100 h-[100dvh]" do
+    aside class: "w-80 bg-base-100 h-[100dvh] overscroll-contain" do
       div class: "flex justify-start items-center" do
         Button(
           :ghost,
@@ -47,9 +47,18 @@ class Sidebar < ApplicationView
                   category.components.each do |component|
                     submenu.item do
                       if component.enabled
-                        link_to component.name, examples_path(component)
+                        link_to(
+                          component.name,
+                          examples_path(component),
+                          data: {turbo_frame: :content}
+                        )
                       else
-                        link_to component.name, "#", class: "opacity-50 !cursor-default"
+                        link_to(
+                          component.name,
+                          "#",
+                          class: "opacity-50 !cursor-default",
+                          data: {turbo_frame: :content}
+                        )
                       end
                     end
                   end
