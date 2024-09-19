@@ -38,12 +38,12 @@ class Sidebar < ApplicationView
             submenu.title { "Components" }
 
             Category.all.each do |category|
-              submenu.item do
-                menu.title as: :h2, class: "px-1.5" do
+              submenu.item do |item|
+                item.title as: :h2, class: "px-1.5" do
                   category.name
                 end
 
-                menu.submenu do |submenu|
+                item.submenu do |submenu|
                   category.components.each do |component|
                     submenu.item do
                       if component.enabled
