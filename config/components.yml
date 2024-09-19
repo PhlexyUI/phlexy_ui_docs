@@ -1,0 +1,64 @@
+---
+categories:
+  Actions:
+    - Button
+    - Dropdown
+    - Modal
+    - Swap
+    - Theme Controller
+  Data display:
+    - Badge
+    - Card
+    - Accordion
+    - Avatar
+    - Carousel
+    - Chat Bubble
+    - Collapse
+    - Countdown
+    - Diff
+    - Kbd
+    - Stat
+    - Table
+    - Timeline
+  Data Input:
+    - Checkbox
+    - File Input
+    - Radio
+    - Range
+    - Rating
+    - Select
+    - Text input
+    - Textarea
+    - Toggle
+  Layout:
+    - Artboard
+    - Divider
+    - Drawer
+    - Footer
+    - Hero
+    - Indicator
+    - Join (group items)
+    - Mask
+    - Stack
+  Mockup:
+    - Browser
+    - Code
+    - Phone
+    - Window
+  Feedback:
+    - Loading
+    - Alert
+    - Progress
+    - Radial Progress
+    - Skeleton
+    - Toast
+    - Tooltip
+  Navigation:
+    - Menu
+    - Link
+    - Breadcrumbs
+    - Bottom Navigation
+    - Navbar
+    - Pagination
+    - Steps
+    - Tab

@@ -5,20 +5,26 @@ class Component
   attr_reader :id
 
   @@registry = {}
+  @@config = YAML.load_file(Rails.root.join("config", "components.yml"))
 
-  def initialize(name:, **)
+  def initialize(name:, category:)
     @id = name.parameterize
-
-    super
+    @name = name
+    @category = category
+    @enabled = file_exists?
   end
 
-  def self.register(name, category:, enabled:)
-    Category.from_name(category).then do |category|
-      new_component = new(name:, category:, enabled:)
-
-      category.components << new_component
-      @@registry[name] = new_component
+  def self.load_components
+    @@config["categories"].each do |category, components|
+      components.each do |component|
+        register(component, category: category)
+      end
     end
+  end
+
+  def self.register(name, category:)
+    Category.from_name(category)
+    @@registry[name] = new(name: name, category: category)
   end
 
   def self.from_name(name)
@@ -26,118 +32,34 @@ class Component
   end
 
   def self.all
-    @@registry
-  end
-
-  def ==(other)
-    id == other.id
+    @@registry.values
   end
 
   def to_param
-    id
+    name.parameterize
   end
 
-  # Actions
-  with_options category: "Actions", enabled: true do
-    register "Button"
-    register "Dropdown"
-  end
+  private
 
-  with_options category: "Actions", enabled: false do
-    register "Modal"
-    register "Swap"
-    register "Theme Controller"
-  end
-
-  # Data display
-  with_options category: "Data display", enabled: true do
-    register "Badge"
-    register "Card"
-  end
-
-  with_options category: "Data display", enabled: false do
-    register "Accordion"
-    register "Avatar"
-    register "Carousel"
-    register "Chat Bubble"
-    register "Collapse"
-    register "Countdown"
-    register "Diff"
-    register "Kbd"
-    register "Stat"
-    register "Table"
-    register "Timeline"
-  end
-
-  # Data Input
-  with_options category: "Data Input", enabled: true do
-    register "Checkbox"
-    register "File Input"
-    register "Radio"
-    register "Range"
-    register "Rating"
-    register "Select"
-    register "Text input"
-    register "Textarea"
-    register "Toggle"
-  end
-
-  with_options category: "Data Input", enabled: false do
-  end
-
-  # Layout
-  with_options category: "Layout", enabled: true do
-  end
-
-  with_options category: "Layout", enabled: false do
-    register "Artboard"
-    register "Divider"
-    register "Drawer"
-    register "Footer"
-    register "Hero"
-    register "Indicator"
-    register "Join (group items)"
-    register "Mask"
-    register "Stack"
-  end
-
-  # Mockup
-  with_options category: "Mockup", enabled: true do
-  end
-
-  with_options category: "Mockup", enabled: false do
-    register "Browser"
-    register "Code"
-    register "Phone"
-    register "Window"
-  end
-
-  # Feedback
-  with_options category: "Feedback", enabled: true do
-    register "Loading"
-  end
-
-  with_options category: "Feedback", enabled: false do
-    register "Alert"
-    register "Progress"
-    register "Radial Progress"
-    register "Skeleton"
-    register "Toast"
-    register "Tooltip"
-  end
-
-  # Navigation
-  with_options category: "Navigation", enabled: true do
-    register "Menu"
-    register "Link"
-  end
-
-  with_options category: "Navigation", enabled: false do
-    register "Breadcrumbs"
-    register "Bottom Navigation"
-    register "Navbar"
-    register "Pagination"
-    register "Steps"
-    register "Tab"
+  def file_exists?
+    File.exist?(
+      Rails.root.join(
+        "app",
+        "views",
+        "examples",
+        name.pluralize.underscore,
+        "show_view.rb"
+      )
+    ) &&
+      File.exist?(
+        Rails.root.join(
+          "app",
+          "views",
+          "components",
+          "examples",
+          name.pluralize.underscore,
+          "basic_component.rb"
+        )
+      )
   end
 end

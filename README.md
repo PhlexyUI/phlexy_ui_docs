@@ -8,11 +8,11 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/PhlexyUI/phlexy_ui_docs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/phlexy_ui/blob/main/CODE_OF_CONDUCT.md).
 
-1. Visit [the docs](https://phlexyui.com/) to see which components are still not implemented or not yet added to the docs. You can also take a look at the `Component` model and see which components are registered with a `enabled: false` flag. These are either not yet implemented, or not yet added to the docs.
+1. Visit [the docs](https://phlexyui.com/) to see which components are still not implemented or not yet added to the docs.
 
 2. If not implemented yet, implement it on the [PhlexyUI repo](https://github.com/PhlexyUI/phlexy_ui).
 
-3. After your PR is merged, add it to the docs by adding it to this repo and making sure to register it on the `Component` model under the `enabled: true` flag section.
+3. After your PR is merged, add it to the docs by adding it to this repo and making sure to add it to the `components.yml` file.
 
 4. Celebrate 🎉
 
@@ -24,12 +24,14 @@ You can use the generators to make your life easier:
 
 If you're adding a new component, use `bin/rails generate example_view`. This generates a new component example view and a basic component.
 
-e.g. `bin/rails generate example_view Card`
+e.g. `bin/rails generate example_view Menu Navigation`
 
 This will create:
 
-- app/views/examples/cards/show_view.rb
-- app/views/components/examples/cards/basic_component.rb
+- app/views/examples/menus/show_view.rb
+- app/views/components/examples/menus/basic_component.rb
+
+It will also append the component in `components.yml` file under the "Navigation" section and restart the server.
 
 **New example**
 
