@@ -8,7 +8,7 @@ class ExamplesController < ApplicationController
   private
 
   def verify_component_exists
-    return if view_class
+    return if view_class && component
 
     render Application::NotFoundView.new, status: :not_found
   end
@@ -22,6 +22,6 @@ class ExamplesController < ApplicationController
   end
 
   def component
-    Component.from_name(component_name)
+    Component.from_name(component_name.to_s.classify)
   end
 end
