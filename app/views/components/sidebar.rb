@@ -50,7 +50,7 @@ class Sidebar < ApplicationView
                         link_to(
                           component.name,
                           examples_path(component),
-                          data: {turbo_frame: :content}
+                          data: {turbo_frame: :content, turbo_action: :advance}
                         )
                       else
                         link_to(
