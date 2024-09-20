@@ -8,23 +8,29 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/PhlexyUI/phlexy_ui_docs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/phlexy_ui/blob/main/CODE_OF_CONDUCT.md).
 
+## How to
+
 1. Visit [the docs](https://phlexyui.com/) to see which components are still not implemented or not yet added to the docs.
 
 2. If not implemented yet, implement it on the [PhlexyUI repo](https://github.com/PhlexyUI/phlexy_ui).
 
-3. After your PR is merged, add it to the docs by adding it to this repo and making sure to add it to the `components.yml` file.
+3. Add it to the docs by adding it to this repo. See [using the generators](https://github.com/PhlexyUI/phlexy_ui_docs?tab=readme-ov-file#using-the-generators) section to see how to do so.
 
 4. Celebrate 🎉
 
 ## Using the generators
 
-You can use the generators to make your life easier:
+You can use the generators to make contributing easier:
 
 **New component**
 
-If you're adding a new component, use `bin/rails generate example_view`. This generates a new component example view and a basic component.
+If you're adding a new component (e.g. a component that is shown as greyed out on the docs sidebar), use `bin/rails generate example_view`. This generates a new component example view and a basic component.
 
-e.g. `bin/rails generate example_view Menu Navigation`
+e.g. To add the "Menu" component under the "Navigation" category, run:
+
+```
+bin/rails generate example_view Menu Navigation
+```
 
 This will create:
 
@@ -35,13 +41,19 @@ It will also append the component in `components.yml` file under the "Navigation
 
 **New example**
 
-If you're adding a new example to an existing component, use `bin/rails generate example_component`. This generates a new component example.
+If you're adding a new example to an existing component (e.g. a component that is visitable on the docs sidebar), use `bin/rails generate example_component`. This generates a new component example.
 
-e.g. `bin/rails generate example_component Cards::Responsive "Optional title"`
+e.g. To add a "Responsive menu" example to the Menu component, run:
+
+```
+bin/rails generate example_component Menus::Responsive "Optional title"
+```
 
 This will create:
 
-- app/views/components/examples/cards/responsive_component.rb
+- app/views/components/examples/menus/responsive_component.rb
+
+It will also append the component to the `Examples::Menus::ShowView` under the `render_examples` section.
 
 # 📃 License
 
