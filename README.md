@@ -55,6 +55,10 @@ This will create:
 
 It will also append the component to the `Examples::Menus::ShowView` under the `render_examples` section.
 
+## Note
+
+When adding or modifying a component example's `example` method, you might encounter a `MethodSource::SourceNotFoundError`. This is a bug with the `method_source` gem used to automatically display and render the examples. To fix it, just restart your server.
+
 # 📃 License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
