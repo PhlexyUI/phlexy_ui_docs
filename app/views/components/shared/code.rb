@@ -37,6 +37,7 @@ module Shared
       when :ruby then Rouge::Lexers::Ruby.new
       when :shell then Rouge::Lexers::Shell.new
       when :javascript then Rouge::Lexers::Javascript.new
+      when :html then Rouge::Lexers::HTML.new
       else raise ArgumentError, "Unsupported code format: #{format}"
       end
     end
