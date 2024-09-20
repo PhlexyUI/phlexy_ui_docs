@@ -21,15 +21,23 @@ module Examples
         Table :zebra, :pin_rows do |table|
           table.header do |header|
             header.row do |row|
-              row.head { "Modifier" }
-              row.head { "DaisyUI class" }
+              row.head class: "w-1/2" do
+                "Modifier"
+              end
+              row.head class: "w-1/2" do
+                "DaisyUI class"
+              end
             end
           end
           table.body do |body|
             component.modifiers.each do |modifier, css_class|
               body.row do |row|
-                row.cell { ":#{modifier}" }
-                row.cell { css_class }
+                row.cell class: "w-1/2" do
+                  ":#{modifier}"
+                end
+                row.cell class: "w-1/2" do
+                  css_class
+                end
               end
             end
           end
