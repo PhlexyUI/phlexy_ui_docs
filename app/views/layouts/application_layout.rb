@@ -125,7 +125,7 @@ class ApplicationLayout < ApplicationView
               end
             end
 
-            drawer.side class: "z-30" do
+            drawer.side class: "z-30 !overscroll-contain" do
               drawer.overlay
               render Sidebar.new
             end
