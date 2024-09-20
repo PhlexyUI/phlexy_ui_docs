@@ -4,7 +4,6 @@ module Examples
       def title
         "Combined"
       end
-      
 
       def example
         Menu class: "bg-base-200 w-52" do |menu|

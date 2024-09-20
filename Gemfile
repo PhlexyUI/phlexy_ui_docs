@@ -73,4 +73,3 @@ group :development do
   gem "annotate"
   gem "dockerfile-rails", ">= 1.6"
 end
-

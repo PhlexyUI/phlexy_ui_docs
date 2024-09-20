@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "ExampleComponentGenerator", type: :generator do
   pending "add some scenarios (or delete) #{__FILE__}"
