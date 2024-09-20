@@ -39,6 +39,10 @@ class Component
     name.parameterize
   end
 
+  def modifiers
+    "PhlexyUI::#{name}".constantize.modifiers
+  end
+
   private
 
   def file_exists?

@@ -9,7 +9,7 @@ module Examples
     end
 
     def render_examples(example_components)
-      render ContainerComponent.new do
+      render ContainerComponent.new(component:) do
         example_components.each do |example_component|
           render example_component.new(component:)
         end
