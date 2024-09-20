@@ -1,6 +1,8 @@
 module Examples
   module Cards
     class WithBadgeComponent < Base
+      include Phlex::Rails::Helpers::ImagePath
+
       def title
         "Card with badge"
       end
@@ -38,7 +40,7 @@ module Examples
       private
 
       def src
-        "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        image_path "green_sneaker.webp"
       end
     end
   end

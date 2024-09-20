@@ -1,6 +1,8 @@
 module Examples
   module Cards
     class ResponsiveComponent < Base
+      include Phlex::Rails::Helpers::ImagePath
+
       def title
         "Responsive card (vertical on small screen, horizontal on large screen)"
       end
@@ -32,7 +34,7 @@ module Examples
       private
 
       def src
-        "https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+        image_path "spiderman.webp"
       end
     end
   end

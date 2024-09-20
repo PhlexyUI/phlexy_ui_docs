@@ -1,6 +1,8 @@
 module Examples
   module Cards
     class WithImageOnSideComponent < Base
+      include Phlex::Rails::Helpers::ImagePath
+
       def title
         "Card with image on side"
       end
@@ -30,7 +32,7 @@ module Examples
       end
 
       def src
-        "https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+        image_path "casette.webp"
       end
     end
   end

@@ -1,5 +1,7 @@
 module Landings
   class ShowView < ApplicationView
+    include Phlex::Rails::Helpers::ImagePath
+
     def view_template
       div class: "w-full flex items-center justify-center mb-8" do
         div class: "flex flex-col items-center justify-center gap-12 max-w-4xl" do
@@ -82,7 +84,7 @@ module Landings
     end
 
     def src
-      "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      image_path "green_sneaker.webp"
     end
   end
 end
