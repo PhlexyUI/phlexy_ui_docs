@@ -25,7 +25,7 @@ class Sidebar < ApplicationView
       Menu do |menu|
         menu.item do |item|
           item.submenu :collapsible, :open do |submenu|
-            submenu.title { "Docs" }
+            submenu.title { "📚 Docs" }
 
             submenu.item do
               link_to "About", docs_path(:about)
@@ -43,7 +43,7 @@ class Sidebar < ApplicationView
 
         menu.item do |item|
           item.submenu :collapsible, :open do |submenu|
-            submenu.title { "Components" }
+            submenu.title { "✨ Components" }
 
             Category.all.each do |category|
               submenu.item do |item|
