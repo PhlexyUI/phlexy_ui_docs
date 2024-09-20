@@ -5,7 +5,7 @@ module Docs
 
       def view_template
         breadcrumbs do
-          "Installation"
+          "Docs"
         end
 
         Title :"4x", :extrabold do
