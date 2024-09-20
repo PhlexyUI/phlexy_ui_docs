@@ -28,6 +28,10 @@ class Sidebar < ApplicationView
             submenu.title { "Docs" }
 
             submenu.item do
+              link_to "About", docs_path(:about)
+            end
+
+            submenu.item do
               link_to "Installation", docs_path(:installation)
             end
 
