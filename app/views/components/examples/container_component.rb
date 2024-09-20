@@ -17,7 +17,7 @@ module Examples
     private
 
     def render_modifiers
-      div class: "h-96 overflow-y-auto overscroll-contain" do
+      div class: "h-96 overflow-y-auto sm:overscroll-contain" do
         Table :zebra, :pin_rows do |table|
           table.header do |header|
             header.row do |row|
