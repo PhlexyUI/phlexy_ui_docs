@@ -119,7 +119,7 @@ class ApplicationLayout < ApplicationView
               end
 
               content_wrapper do
-                turbo_frame_tag :content do
+                turbo_frame_tag :content, autoscroll: true do
                   yield
                 end
               end
