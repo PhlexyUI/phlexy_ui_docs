@@ -30,6 +30,10 @@ class Sidebar < ApplicationView
             submenu.item do
               link_to "Installation", docs_path(:installation)
             end
+
+            submenu.item do
+              link_to "Configuration", docs_path(:configuration)
+            end
           end
         end
 
