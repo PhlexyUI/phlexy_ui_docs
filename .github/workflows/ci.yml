@@ -54,7 +54,7 @@ jobs:
           bundler-cache: true
 
       - name: Lint code for consistent style
-        run: bundle exec standardrb --fix
+        run: bundle exec standardrb
 
   test:
     runs-on: ubuntu-latest
