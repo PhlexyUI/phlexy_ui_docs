@@ -63,7 +63,7 @@ module Shared
     private
 
     def render_theme_changer
-      Dropdown :end do |dropdown|
+      Dropdown :end, data: {controller: :theme} do |dropdown|
         dropdown.button :ghost, class: "mb-2" do
           "Theme"
         end
@@ -86,7 +86,7 @@ module Shared
           div class: "grid grid-cols-1 gap-3 p-3" do
             THEMES.each do |theme|
               menu.item do
-                a data: {set_theme: theme} do
+                a data: {theme:, action: "theme#change"} do
                   theme.capitalize
                 end
               end
