@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/PhlexyUI/phlexy_ui.git
-  revision: f5a986cb4d338a66b5a64612f3c64c0fc6ba0e93
+  revision: 9d6b923ed4a98b7c3669c1e39d9f73e35872e2c7
   branch: main
   specs:
     phlexy_ui (0.1.5)

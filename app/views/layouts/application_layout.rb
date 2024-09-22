@@ -111,7 +111,7 @@ class ApplicationLayout < ApplicationView
         main do
           render_flash
 
-          Drawer id: :drawer, lg: :open do |drawer|
+          Drawer id: :drawer, responsive: {lg: :open} do |drawer|
             drawer.toggle
             drawer.content do
               Nav(drawer:)

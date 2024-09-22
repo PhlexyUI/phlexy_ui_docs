@@ -6,7 +6,7 @@ module Examples
       end
 
       def example
-        Menu :base_200, :vertical, lg: :horizontal, class: "rounded-box" do |menu|
+        Menu :base_200, :vertical, responsive: {lg: :horizontal}, class: "rounded-box" do |menu|
           menu.item do
             a do
               "Item 1"
