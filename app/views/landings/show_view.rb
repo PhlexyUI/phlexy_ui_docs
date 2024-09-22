@@ -70,7 +70,7 @@ module Landings
     private
 
     def example
-      Card :base_100 do |card|
+      Card :base_100, class: "shadow-xl" do |card|
         figure do
           img(src:)
         end
