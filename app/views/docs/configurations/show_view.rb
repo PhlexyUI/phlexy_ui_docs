@@ -18,18 +18,6 @@ module Docs
 
       private
 
-      def breadcrumbs
-        div class: "breadcrumbs text-sm mb-4 leading-6 font-semibold text-accent" do
-          ul do
-            li do
-              a do
-                yield
-              end
-            end
-          end
-        end
-      end
-
       def render_prefix_section
         DocsSection do
           Title :"2xl", :bold, as: :h2 do

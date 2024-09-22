@@ -229,18 +229,6 @@ module Docs
           end
         end
       end
-
-      def breadcrumbs
-        div class: "breadcrumbs text-sm mb-4 leading-6 font-semibold text-accent" do
-          ul do
-            li do
-              a do
-                yield
-              end
-            end
-          end
-        end
-      end
     end
   end
 end
