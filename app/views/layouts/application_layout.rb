@@ -114,30 +114,7 @@ class ApplicationLayout < ApplicationView
           Drawer id: :drawer, lg: :open do |drawer|
             drawer.toggle
             drawer.content do
-              Navbar class: "fixed top-0 z-20 bg-base-100 lg:w-[calc(100%-20rem)]" do |navbar|
-                navbar.start do
-                  drawer.button :ghost, :square, class: "lg:hidden" do
-                    burger_svg
-                  end
-                end
-
-                navbar.center do
-                end
-
-                navbar.end do
-                  render_theme_changer
-
-                  Button(
-                    :ghost,
-                    :square,
-                    as: :a,
-                    href: "https://github.com/phlexyUI/phlexy_ui",
-                    target: "_blank"
-                  ) do
-                    github_svg
-                  end
-                end
-              end
+              Nav(drawer:)
 
               content_wrapper do
                 turbo_frame_tag :content, autoscroll: true do
@@ -157,89 +134,6 @@ class ApplicationLayout < ApplicationView
   end
 
   private
-
-  def burger_svg
-    svg(
-      xmlns: "http://www.w3.org/2000/svg",
-      fill: "none",
-      viewbox: "0 0 24 24",
-      class: "inline-block w-6 h-6 stroke-current"
-    ) do |s|
-      s.path(
-        stroke_linecap: "round",
-        stroke_linejoin: "round",
-        stroke_width: "2",
-        d: "M4 6h16M4 12h16M4 18h16"
-      )
-    end
-  end
-
-  def github_svg
-    svg(
-      viewbox: "0 0 16 16",
-      class: "w-5 h-5",
-      fill: "currentColor",
-      aria_hidden: "true"
-    ) do |s|
-      s.path(
-        d:
-          "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-      )
-    end
-  end
-
-  def render_theme_changer
-    Dropdown :end do |dropdown|
-      dropdown.button class: "mb-2" do
-        "Theme"
-      end
-
-      dropdown.menu :base_200, class: "rounded-box top-px h-[28.6rem] max-h-[calc(100vh-10rem)] w-56 overflow-y-auto border border-white/5 shadow-2xl outline outline-1 outline-black/5 mt-16" do |menu|
-        div class: "grid grid-cols-1 gap-3 p-3" do
-          [
-            "light",
-            "dark",
-            "cupcake",
-            "bumblebee",
-            "emerald",
-            "corporate",
-            "synthwave",
-            "retro",
-            "cyberpunk",
-            "valentine",
-            "halloween",
-            "garden",
-            "forest",
-            "aqua",
-            "lofi",
-            "pastel",
-            "fantasy",
-            "wireframe",
-            "black",
-            "luxury",
-            "dracula",
-            "cmyk",
-            "autumn",
-            "business",
-            "acid",
-            "lemonade",
-            "night",
-            "coffee",
-            "winter",
-            "dim",
-            "nord",
-            "sunset"
-          ].each do |theme|
-            menu.item do
-              a data: {set_theme: theme} do
-                theme.capitalize
-              end
-            end
-          end
-        end
-      end
-    end
-  end
 
   def content_wrapper(&block)
     div class: "px-4 sm:px-6 md:px-8 pb-8 mt-20" do
