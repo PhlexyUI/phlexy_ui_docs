@@ -14,7 +14,7 @@ module Examples
             head.row do |row|
               row.head do
                 label do
-                  input(type: "checkbox", class: "checkbox")
+                  render Checkbox
                 end
               end
               row.head { "Name" }
@@ -31,7 +31,7 @@ module Examples
               body.row do |row|
                 row.head do
                   label do
-                    input(type: "checkbox", class: "checkbox")
+                    render Checkbox
                   end
                 end
 
