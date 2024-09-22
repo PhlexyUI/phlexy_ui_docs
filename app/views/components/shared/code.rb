@@ -54,12 +54,12 @@ module Shared
           .highlight .rouge-gutter {
             width: 0;
             padding: 0;
-            color: #494e61;
+            color: oklch(var(--nc));
             text-shadow: none;
           }
   
           .highlight {
-            background-color: oklch(var(--b3));
+            background-color: oklch(var(--n));
           }
   
           .highlight .gi {

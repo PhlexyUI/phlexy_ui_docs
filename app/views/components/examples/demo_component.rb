@@ -60,7 +60,10 @@ module Examples
 
     def render_demo
       classes = [
-        "bg-base-300",
+        "border-base-300",
+        "[border-width:var(--tab-border)]",
+        "bg-[length:40px_40px]",
+        "bg-top",
         "flex",
         "flex-wrap",
         "gap-4",
@@ -68,14 +71,23 @@ module Examples
         "items-center",
         "content-center",
         "p-8",
-        "rounded-lg",
         "min-h-[24rem]",
-        "rounded-2xl",
+        "rounded-box",
         "overflow-x-hidden",
         "lg:overflow-x-scroll"
       ]
 
-      div class: classes do
+      style = <<~CSS
+        background-image: repeating-linear-gradient(
+          45deg,
+          var(--fallback-b1, oklch(var(--b1))),
+          var(--fallback-b1, oklch(var(--b1))) 13px,
+          var(--fallback-b2, oklch(var(--b2))) 13px,
+          var(--fallback-b2, oklch(var(--b2))) 14px
+        );
+      CSS
+
+      div class: classes, style: style do
         @example_method.call
       end
     end
