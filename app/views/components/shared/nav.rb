@@ -78,7 +78,8 @@ module Shared
           "outline",
           "outline-1",
           "outline-black/5",
-          "shadow-2xl"
+          "shadow-2xl",
+          "overscroll-contain"
         ]
 
         dropdown.menu :base_200, class: classes do |menu|
