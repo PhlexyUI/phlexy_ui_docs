@@ -1,6 +1,8 @@
 module Examples
   module Tables
     class WithVisualElements < Base
+      include Phlex::Rails::Helpers::ImagePath
+
       def title
         "Table with visual elements"
       end
@@ -99,28 +101,28 @@ module Examples
             country: "United States",
             job: "Desktop Support Technician",
             color: "Purple",
-            avatar: "https://img.daisyui.com/images/profile/demo/2@94.webp"
+            avatar: image_path("person_1.webp")
           ),
           OpenStruct.new(
             name: "Brice Swyre",
             country: "China",
             job: "Tax Accountant",
             color: "Red",
-            avatar: "https://img.daisyui.com/images/profile/demo/3@94.webp"
+            avatar: image_path("person_2.webp")
           ),
           OpenStruct.new(
             name: "Marjy Ferencz",
             country: "Russia",
             job: "Office Assistant I",
             color: "Crimson",
-            avatar: "https://img.daisyui.com/images/profile/demo/4@94.webp"
+            avatar: image_path("person_3.webp")
           ),
           OpenStruct.new(
             name: "Yancy Tear",
             country: "Brazil",
             job: "Community Outreach Specialist",
             color: "Indigo",
-            avatar: "https://img.daisyui.com/images/profile/demo/5@94.webp"
+            avatar: image_path("person_4.webp")
           )
         ]
       end
