@@ -17,7 +17,7 @@ module Examples
             end
 
             p class: "py-4" do
-              "Press ESC key or click the button below to close"
+              "Press ESC key, click outside or click the button below to close"
             end
 
             modal.action do |action|

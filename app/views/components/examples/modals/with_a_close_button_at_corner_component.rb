@@ -21,7 +21,7 @@ module Examples
             end
 
             p class: "py-4" do
-              "Press ESC key or click the button below to close"
+              "Press ESC key or click the button above to close"
             end
           end
         end
