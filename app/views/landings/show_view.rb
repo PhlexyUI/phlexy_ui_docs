@@ -39,11 +39,21 @@ module Landings
           end
 
           div class: "flex gap-4 self-start" do
-            Button :outline, as: :a, href: examples_path(:button) do
+            Button(
+              :outline,
+              as: :a,
+              href: examples_path(:button),
+              data: {turbo_frame: :_top}
+            ) do
               "Browse components"
             end
 
-            Button :primary, as: :a, href: docs_path(:installation) do
+            Button(
+              :primary,
+              as: :a,
+              href: docs_path(:installation),
+              data: {turbo_frame: :_top}
+            ) do
               "Get started"
             end
           end
