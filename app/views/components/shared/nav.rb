@@ -64,7 +64,7 @@ module Shared
 
     def render_theme_changer
       Dropdown :end do |dropdown|
-        dropdown.button class: "mb-2" do
+        dropdown.button :ghost, class: "mb-2" do
           "Theme"
         end
 
