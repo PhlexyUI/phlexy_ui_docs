@@ -5,6 +5,19 @@ class ExampleViewGenerator < Rails::Generators::NamedBase
 
   argument :category, type: :string, default: "", banner: "Category of the component"
 
+  def update_component_registry
+    if category.blank?
+      say(<<~TXT.squish, :red)
+        You need to specify a category for the component. See 
+        'rails generate example_view --help' for more information.
+      TXT
+      exit 1
+    end
+
+    update_yaml_file
+    system "bin/rails restart", exception: true
+  end
+
   def create_view_file
     template(
       "show_view.rb.tt",
@@ -30,13 +43,6 @@ class ExampleViewGenerator < Rails::Generators::NamedBase
         "basic_component.rb"
       )
     )
-  end
-
-  def update_component_registry
-    return if category.blank?
-
-    update_yaml_file
-    system "bin/rails restart", exception: true
   end
 
   private
