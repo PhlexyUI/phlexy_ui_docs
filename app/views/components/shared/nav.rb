@@ -3,8 +3,8 @@
 module Shared
   class Nav < ApplicationComponent
     THEMES = [
-      "light",
       "dark",
+      "light",
       "cupcake",
       "bumblebee",
       "emerald",
