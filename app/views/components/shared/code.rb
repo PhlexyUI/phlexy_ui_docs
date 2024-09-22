@@ -54,7 +54,7 @@ module Shared
           .highlight .rouge-gutter {
             width: 0;
             padding: 0;
-            color: oklch(var(--nc));
+            color: oklch(var(--nc) / 0.3);
             text-shadow: none;
           }
   
