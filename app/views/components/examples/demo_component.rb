@@ -60,18 +60,25 @@ module Examples
 
     def render_demo
       classes = [
+        # Border and background
         "border-base-300",
         "[border-width:var(--tab-border)]",
         "bg-[length:40px_40px]",
         "bg-top",
+
+        # Flexbox layout
         "flex",
         "flex-wrap",
         "gap-4",
         "[justify-content:safe_center]",
         "items-center",
         "content-center",
+
+        # Padding and size
         "p-8",
         "min-h-[24rem]",
+
+        # Miscellaneous
         "rounded-box",
         "overflow-x-hidden",
         "lg:overflow-x-scroll"
