@@ -5,7 +5,7 @@ module Examples
     end
 
     def title(&)
-      Title :"4x", :extrabold, &
+      Title :"4xl", :extrabold, &
     end
 
     def render_examples(example_components)

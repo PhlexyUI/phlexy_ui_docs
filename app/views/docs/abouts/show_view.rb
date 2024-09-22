@@ -8,7 +8,7 @@ module Docs
           "Docs"
         end
 
-        Title :"4x", :extrabold do
+        Title :"4xl", :extrabold do
           "About"
         end
 
@@ -31,7 +31,7 @@ module Docs
 
       def render_about_section
         DocsSection do
-          Title :"2x", :bold, as: :h2, class: "space-y-4" do
+          Title :"2xl", :bold, as: :h2 do
             "Why PhlexyUI?"
           end
 
@@ -59,7 +59,7 @@ module Docs
         end
 
         DocsSection do
-          Title :"2x", :bold, as: :h2, class: "space-y-4" do
+          Title :"2xl", :bold, as: :h2 do
             "Vision"
           end
 

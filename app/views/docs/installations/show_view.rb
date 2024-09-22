@@ -8,7 +8,7 @@ module Docs
           "Docs"
         end
 
-        Title :"4x", :extrabold do
+        Title :"4xl", :extrabold do
           "Get started with PhlexyUI"
         end
 
@@ -37,7 +37,7 @@ module Docs
       end
 
       def render_css_dependencies_section
-        Title :"2x", :bold, as: :h3 do
+        Title :"2xl", :bold, as: :h3 do
           "1. Install CSS dependencies"
         end
 
@@ -150,7 +150,7 @@ module Docs
       end
 
       def render_ruby_dependencies_section
-        Title :"2x", :bold, as: :h3 do
+        Title :"2xl", :bold, as: :h3 do
           "2. Install Ruby dependencies"
         end
 

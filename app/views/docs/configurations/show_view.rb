@@ -8,7 +8,7 @@ module Docs
           "Docs"
         end
 
-        Title :"4x", :extrabold do
+        Title :"4xl", :extrabold do
           "Configuration"
         end
 
@@ -32,7 +32,7 @@ module Docs
 
       def render_prefix_section
         DocsSection do
-          Title :"2x", :bold, as: :h2, class: "space-y-4" do
+          Title :"2xl", :bold, as: :h2 do
             "Prefix"
           end
 
@@ -71,11 +71,11 @@ module Docs
 
       def render_custom_modifiers_section
         DocsSection do
-          Title :"2x", :bold, as: :h2, class: "space-y-4" do
+          Title :"2xl", :bold, as: :h2 do
             "Custom Modifiers"
           end
 
-          Title :"1x", :bold, as: :h3, class: "space-y-4" do
+          Title :xl, :bold, as: :h3 do
             "Component specific modifiers"
           end
 
@@ -114,7 +114,7 @@ module Docs
           HTML
           end
 
-          Title :"1x", :bold, as: :h3, class: "space-y-4" do
+          Title :xl, :bold, as: :h3 do
             "Global modifiers"
           end
 

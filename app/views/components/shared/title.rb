@@ -22,10 +22,10 @@ module Shared
 
     TITLE_MODIFIERS_CLASSES = {
       lg: "text-lg",
-      "1x": "text-xl",
-      "2x": "text-2xl",
-      "3x": "text-3xl",
-      "4x": "text-4xl",
+      xl: "text-xl",
+      "2xl": "text-2xl",
+      "3xl": "text-3xl",
+      "4xl": "text-4xl",
       bold: "font-bold",
       extrabold: "font-extrabold"
     }
