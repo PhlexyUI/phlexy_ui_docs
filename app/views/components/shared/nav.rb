@@ -46,7 +46,7 @@ module Shared
     end
 
     def view_template
-      Navbar class: "fixed top-0 z-20 bg-base-100 lg:w-[calc(100%-20rem)]", id: :nav do |navbar|
+      Navbar class: "fixed top-0 z-30 bg-base-100 lg:w-[calc(100%-20rem)]", id: :nav do |navbar|
         navbar.start do
           drawer.button :ghost, :square, class: "lg:hidden" do
             render BurgerSvg
