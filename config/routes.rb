@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get "components/:component" => "examples#show", :as => "examples"
   get "docs/:doc_name" => "docs#show", :as => "docs"
   get "landing" => "landing#show", :as => "landing"
+  resources :themes, only: :create
 end

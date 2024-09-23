@@ -10,7 +10,7 @@ class ApplicationLayout < ApplicationView
   def view_template(&block)
     doctype
 
-    html class: "overscroll-auto sm:overscroll-y-none", data: {theme: :light} do
+    html class: "overscroll-auto sm:overscroll-y-none", data: {theme: helpers.session[:theme] || :light} do
       head do
         title { "PhlexyUI Docs" }
         meta name: "viewport", content: "width=device-width,initial-scale=1"

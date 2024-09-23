@@ -2,6 +2,8 @@
 
 module Shared
   class Nav < ApplicationComponent
+    include Phlex::Rails::Helpers::LinkTo
+
     THEMES = [
       "light",
       "dark",
@@ -38,12 +40,13 @@ module Shared
     ].freeze
 
     attr_reader :drawer
+
     def initialize(drawer:)
       @drawer = drawer
     end
 
     def view_template
-      Navbar class: "fixed top-0 z-20 bg-base-100 lg:w-[calc(100%-20rem)]" do |navbar|
+      Navbar class: "fixed top-0 z-20 bg-base-100 lg:w-[calc(100%-20rem)]", id: :nav do |navbar|
         navbar.start do
           drawer.button :ghost, :square, class: "lg:hidden" do
             render BurgerSvg
@@ -63,7 +66,7 @@ module Shared
     private
 
     def render_theme_changer
-      Dropdown :end, data: {controller: :theme} do |dropdown|
+      Dropdown :end do |dropdown|
         dropdown.button :ghost, class: "mb-2" do
           "Theme"
         end
@@ -86,7 +89,7 @@ module Shared
           div class: "grid grid-cols-1 gap-3 p-3" do
             THEMES.each do |theme|
               menu.item do
-                a data: {theme:, action: "theme#change"} do
+                link_to themes_path(theme:), data: {theme:, turbo_method: :post, turbo_track: :reload} do
                   theme.capitalize
                 end
               end
