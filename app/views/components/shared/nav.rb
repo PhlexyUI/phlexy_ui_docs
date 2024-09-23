@@ -89,7 +89,7 @@ module Shared
           div class: "grid grid-cols-1 gap-3 p-3" do
             THEMES.each do |theme|
               menu.item do
-                link_to themes_path(theme:), data: {theme:, turbo_method: :post, turbo_track: :reload} do
+                link_to themes_path(theme:), data: {theme:, turbo_method: :post} do
                   theme.capitalize
                 end
               end
