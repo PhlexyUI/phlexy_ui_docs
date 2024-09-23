@@ -4,41 +4,6 @@ module Shared
   class Nav < ApplicationComponent
     include Phlex::Rails::Helpers::LinkTo
 
-    THEMES = [
-      "light",
-      "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
-      "synthwave",
-      "retro",
-      "cyberpunk",
-      "valentine",
-      "halloween",
-      "garden",
-      "forest",
-      "aqua",
-      "lofi",
-      "pastel",
-      "fantasy",
-      "wireframe",
-      "black",
-      "luxury",
-      "dracula",
-      "cmyk",
-      "autumn",
-      "business",
-      "acid",
-      "lemonade",
-      "night",
-      "coffee",
-      "winter",
-      "dim",
-      "nord",
-      "sunset"
-    ].freeze
-
     attr_reader :drawer
 
     def initialize(drawer:)
@@ -87,7 +52,7 @@ module Shared
 
         dropdown.menu :base_200, class: classes do |menu|
           div class: "grid grid-cols-1 gap-3 p-3" do
-            THEMES.each do |theme|
+            ThemesController::VALID_THEMES.each do |theme|
               menu.item do
                 link_to themes_path(theme:), data: {theme:, turbo_method: :post} do
                   theme.capitalize
