@@ -80,8 +80,7 @@ module Examples
 
         # Miscellaneous
         "rounded-box",
-        "overflow-x-hidden",
-        "lg:overflow-x-scroll"
+        "overflow-x-auto"
       ]
 
       style = <<~CSS
