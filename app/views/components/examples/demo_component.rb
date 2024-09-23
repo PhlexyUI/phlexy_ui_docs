@@ -80,7 +80,11 @@ module Examples
 
         # Miscellaneous
         "rounded-box",
-        "overflow-x-auto"
+        "overflow-x-auto",
+
+        # Positioning
+        "sticky",
+        "top-[7.8rem]"
       ]
 
       style = <<~CSS
