@@ -6,15 +6,14 @@ module Examples
       end
 
       def example
-        Avatar :placeholder do
-          classes = [
-            "bg-neutral",
-            "text-neutral-content",
-            "w-24",
-            "rounded-full"
-          ]
+        base_classes = [
+          "rounded-full",
+          "bg-neutral",
+          "text-neutral-content"
+        ]
 
-          div class: classes do
+        Avatar :placeholder do
+          div class: [*base_classes, "w-24"] do
             span class: "text-3xl" do
               "D"
             end
@@ -22,14 +21,7 @@ module Examples
         end
 
         Avatar :placeholder, :online do
-          classes = [
-            "bg-neutral",
-            "text-neutral-content",
-            "w-16",
-            "rounded-full"
-          ]
-
-          div class: classes do
+          div class: [*base_classes, "w-16"] do
             span class: "text-xl" do
               "AI"
             end
@@ -37,14 +29,7 @@ module Examples
         end
 
         Avatar :placeholder do
-          classes = [
-            "bg-neutral",
-            "text-neutral-content",
-            "w-12",
-            "rounded-full"
-          ]
-
-          div class: classes do
+          div class: [*base_classes, "w-12"] do
             span do
               "SY"
             end
@@ -52,14 +37,7 @@ module Examples
         end
 
         Avatar :placeholder do
-          classes = [
-            "bg-neutral",
-            "text-neutral-content",
-            "w-8",
-            "rounded-full"
-          ]
-
-          div class: classes do
+          div class: [*base_classes, "w-8"] do
             span class: "text-xs" do
               "UI"
             end
