@@ -52,6 +52,10 @@ class Component
     "PhlexyUI::#{name}".safe_constantize.present?
   end
 
+  def github_url
+    "https://github.com/PhlexyUI/phlexy_ui/blob/main/lib/phlexy_ui/#{name.underscore}.rb"
+  end
+
   private
 
   def file_exists?

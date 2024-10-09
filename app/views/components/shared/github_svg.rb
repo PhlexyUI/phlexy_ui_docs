@@ -1,9 +1,13 @@
 module Shared
   class GithubSvg < ApplicationComponent
+    def initialize(**options)
+      @classes = options[:class] || "w-5 h-5"
+    end
+
     def view_template
       svg(
         viewbox: "0 0 16 16",
-        class: "w-5 h-5",
+        class: classes,
         fill: "currentColor",
         aria_hidden: "true"
       ) do |s|
@@ -13,5 +17,9 @@ module Shared
         )
       end
     end
+
+    private
+
+    attr_reader :classes
   end
 end

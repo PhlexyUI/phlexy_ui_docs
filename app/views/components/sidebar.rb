@@ -62,18 +62,23 @@ class Sidebar < ApplicationView
                         )
                       elsif component.implemented?
                         link_to(
-                          "#",
-                          class: "!cursor-default",
-                          data: {turbo_frame: :content}
+                          component.github_url,
+                          class: "!cursor-alias",
+                          data: {turbo_frame: :content},
+                          target: "_blank"
                         ) do
-                          span class: "opacity-50" do
+                          span do
                             component.name
                           end
 
-                          Tooltip tip: "Implemented, not documented" do
-                            Badge :outline, :info, class: "opacity-50" do
-                              "Undocumented"
+                          div class: "flex gap-2 justify-end items-center" do
+                            Tooltip tip: "Implemented, undocumented" do
+                              Badge :outline, :info, :sm, class: "opacity-50" do
+                                "Undocumented"
+                              end
                             end
+
+                            render GithubSvg.new(class: "w-4 h-4 opacity-50")
                           end
                         end
                       else
