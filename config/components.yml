@@ -30,6 +30,7 @@ categories:
   - Text input
   - Textarea
   - Toggle
+  - FormControl
   Layout:
   - Artboard
   - Divider
