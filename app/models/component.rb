@@ -1,7 +1,8 @@
 class Component
   include ActiveModel::Model
 
-  attr_accessor :name, :category, :enabled
+  attr_writer :documented
+  attr_accessor :name, :category
   attr_reader :id
 
   @@registry = {}
@@ -11,7 +12,7 @@ class Component
     @id = name.parameterize
     @name = name
     @category = category
-    @enabled = file_exists?
+    @documented = file_exists?
   end
 
   def self.load_components
@@ -41,6 +42,10 @@ class Component
 
   def modifiers
     "PhlexyUI::#{name}".constantize.modifiers
+  end
+
+  def documented?
+    @documented
   end
 
   private

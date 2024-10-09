@@ -54,7 +54,7 @@ class Sidebar < ApplicationView
                 item.submenu do |submenu|
                   category.components.each do |component|
                     submenu.item do
-                      if component.enabled
+                      if component.documented?
                         link_to(
                           component.name,
                           examples_path(component),
