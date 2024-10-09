@@ -60,6 +60,22 @@ class Sidebar < ApplicationView
                           examples_path(component),
                           data: {turbo_frame: :content, turbo_action: :advance}
                         )
+                      elsif component.implemented?
+                        link_to(
+                          "#",
+                          class: "!cursor-default",
+                          data: {turbo_frame: :content}
+                        ) do
+                          span class: "opacity-50" do
+                            component.name
+                          end
+
+                          Tooltip tip: "Implemented, not documented" do
+                            Badge :outline, :info, class: "opacity-50" do
+                              "Undocumented"
+                            end
+                          end
+                        end
                       else
                         link_to(
                           component.name,

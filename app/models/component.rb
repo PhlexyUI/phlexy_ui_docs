@@ -48,6 +48,10 @@ class Component
     @documented
   end
 
+  def implemented?
+    "PhlexyUI::#{name}".safe_constantize.present?
+  end
+
   private
 
   def file_exists?
