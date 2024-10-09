@@ -183,12 +183,42 @@ module Docs
           end
 
           p do
-            "2. Include the PhlexyUI module in ApplicationComponent:"
+            "2. (Optional) Include the PhlexyUI module in ApplicationComponent:"
           end
 
           Code(:ruby, source: <<~RB) do
             class ApplicationComponent < Phlex::HTML
               include PhlexyUI
+            end
+          RB
+          end
+
+          p do
+            "Including PhlexyUI is necessary if you want to use PhlexyUI components using the short-form syntax provided by Phlex::Kit. For example:"
+          end
+
+          Code(:ruby, source: <<~RB) do
+            class SomeView < ApplicationView
+              def view_template
+                Button :primary do
+                  "Hello, world!"
+                end
+              end
+            end
+          RB
+          end
+
+          p do
+            "If you don't include PhlexyUI in ApplicationComponent, you can use the long-form syntax:"
+          end
+
+          Code(:ruby, source: <<~RB) do
+            class SomeView < ApplicationView
+              def view_template
+                PhlexyUI::Button :primary do
+                  "Hello, world!"
+                end
+              end
             end
           RB
           end
