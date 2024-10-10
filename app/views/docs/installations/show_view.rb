@@ -177,7 +177,7 @@ module Docs
             "1. Add the PhlexyUI gem to your Gemfile:"
           end
 
-          Code(:shell, source: <<~RB) do
+          Code(:shell, source: <<~RB, mockup: true) do
             bundle add phlexy_ui
           RB
           end
@@ -186,7 +186,7 @@ module Docs
             "2. (Optional) Include the PhlexyUI module in ApplicationComponent:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             class ApplicationComponent < Phlex::HTML
               include PhlexyUI
             end
@@ -197,7 +197,7 @@ module Docs
             "Including PhlexyUI is necessary if you want to use PhlexyUI components using the short-form syntax provided by Phlex::Kit. For example:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             class SomeView < ApplicationView
               def view_template
                 Button :primary do
@@ -212,7 +212,7 @@ module Docs
             "If you don't include PhlexyUI in ApplicationComponent, you can use the long-form syntax:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             class SomeView < ApplicationView
               def view_template
                 PhlexyUI::Button :primary do
@@ -227,7 +227,7 @@ module Docs
             "3. Update your tailwind.config.js file to include PhlexyUI styles:"
           end
 
-          Code(:javascript, source: <<~JS) do
+          Code(:javascript, source: <<~JS, mockup: true) do
             const execSync = require("child_process").execSync;
             const outputPhlexyUI = execSync("bundle show phlexy_ui", { encoding: "utf-8" });
             const phlexyUIPath = outputPhlexyUI.trim() + "/**/*.rb";
@@ -246,7 +246,7 @@ module Docs
           TailwindCSS classes in Ruby files."
           end
 
-          Code(:javascript, source: <<~JS) do
+          Code(:javascript, source: <<~JS, mockup: true) do
             module.exports = {
               content: [
                 // ... other paths

@@ -55,7 +55,7 @@ module Examples
     end
 
     def render_code
-      Code(:ruby, source:)
+      Code(:ruby, source:, mockup: true)
     end
 
     def render_demo

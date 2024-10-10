@@ -3,23 +3,33 @@ module Shared
     HIGHLIGHT_CSS_CLASS = "highlight"
     CODE_LINE_CSS_CLASS = "line-%i"
 
-    def initialize(format, source:)
+    def initialize(format, source:, mockup: false, inline: false)
       @source = source
       @format = format
+      @mockup = mockup
+      @inline = inline
 
       @theme = Rouge::Themes::Monokai
       @formatter = Rouge::Formatters::HTML.new(@theme)
-      @formatter = Rouge::Formatters::HTMLLineTable.new(
-        @formatter,
-        class: CODE_LINE_CSS_CLASS
-      )
+      unless inline
+        @formatter = Rouge::Formatters::HTMLLineTable.new(
+          @formatter,
+          class: CODE_LINE_CSS_CLASS
+        )
+      end
       @css = @theme.render(scope: ".#{HIGHLIGHT_CSS_CLASS}")
     end
 
     def view_template
       render_css
 
-      div(class: "mockup-code #{HIGHLIGHT_CSS_CLASS}") do
+      classes = [
+        HIGHLIGHT_CSS_CLASS,
+        ("mockup-code" if mockup),
+        ("inline-block pl-1 rounded" if inline)
+      ]
+
+      pre class: classes do
         pre class: "line-numbers" do
           code class: "language-rb" do
             formatter.format(lexer.lex(source)).html_safe
@@ -30,7 +40,7 @@ module Shared
 
     private
 
-    attr_reader :source, :format, :formatter, :css
+    attr_reader :source, :format, :mockup, :inline, :formatter, :css
 
     def lexer
       case format

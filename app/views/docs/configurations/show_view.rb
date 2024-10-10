@@ -28,7 +28,7 @@ module Docs
             "You can change the prefix of the modifiers by setting the `prefix` option. This is useful if you want to introduce PhlexyUI into a project without clashing with existing CSS classes."
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             # config/initializers/phlexy_ui.rb
             PhlexyUI.configure do |config|
               config.prefix = "foo-"
@@ -40,7 +40,7 @@ module Docs
             "This will add the `foo-` prefix to all the modifiers. For example:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             Card :compact do
             end
           RB
@@ -50,7 +50,7 @@ module Docs
             "Will render as:"
           end
 
-          Code(:html, source: <<~HTML) do
+          Code(:html, source: <<~HTML, mockup: true) do
             <section class="foo-card foo-card-compact"></section>
           HTML
           end
@@ -71,7 +71,7 @@ module Docs
             "PhlexyUI allows you to add custom modifiers to your components. These modifiers are used to add custom styles to your components. For example:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             # config/initializers/phlexy_ui.rb
             PhlexyUI.configure do |config|
               config.modifiers.add(
@@ -87,7 +87,7 @@ module Docs
             "This will add a `my-modifier` modifier to the `Card` component. You can then use this modifier in your components like this:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             Card :my_modifier do
             end
           RB
@@ -97,7 +97,7 @@ module Docs
             "Which will render as:"
           end
 
-          Code(:html, source: <<~HTML) do
+          Code(:html, source: <<~HTML, mockup: true) do
             <section class="card w-96 shadow-xl"></section>
           HTML
           end
@@ -110,7 +110,7 @@ module Docs
             "You can also add a modifier to all components by adding a global modifier. For example:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             # config/initializers/phlexy_ui.rb
             PhlexyUI.configure do |config|
               config.modifiers.add(
@@ -125,7 +125,7 @@ module Docs
             "This will add a `my_global_modifier  ` modifier to all components. For example:"
           end
 
-          Code(:ruby, source: <<~RB) do
+          Code(:ruby, source: <<~RB, mockup: true) do
             Card :my_global_modifier do
             end
 
@@ -138,7 +138,7 @@ module Docs
             "Which will render as:"
           end
 
-          Code(:html, source: <<~HTML) do
+          Code(:html, source: <<~HTML, mockup: true) do
             <section class="card w-96 shadow-xl"></section>
             <button class="button w-96 shadow-xl"></button>
           HTML
