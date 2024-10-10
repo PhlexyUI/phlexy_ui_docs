@@ -182,8 +182,11 @@ module Docs
           RB
           end
 
-          p do
-            "2. (Optional) Include the PhlexyUI module in ApplicationComponent:"
+          div do
+            span do
+              "2. (Optional) Include the PhlexyUI module in "
+            end
+            Code(:ruby, source: "ApplicationComponent:", inline: true)
           end
 
           Code(:ruby, source: <<~RB, mockup: true) do
@@ -193,8 +196,12 @@ module Docs
           RB
           end
 
-          p do
-            "Including PhlexyUI is necessary if you want to use PhlexyUI components using the short-form syntax provided by Phlex::Kit. For example:"
+          div do
+            span do
+              <<~TEXT
+                This will allow you to use PhlexyUI components using the short-form syntax. For example:
+              TEXT
+            end
           end
 
           Code(:ruby, source: <<~RB, mockup: true) do
@@ -208,8 +215,10 @@ module Docs
           RB
           end
 
-          p do
-            "If you don't include PhlexyUI in ApplicationComponent, you can use the long-form syntax:"
+          div do
+            span do
+              "If you don't include PhlexyUI, you can still use the namespaced syntax:"
+            end
           end
 
           Code(:ruby, source: <<~RB, mockup: true) do
@@ -221,6 +230,33 @@ module Docs
               end
             end
           RB
+          end
+
+          p do
+            plain "Consider "
+            b do
+              "not"
+            end
+            plain " including PhlexyUI in ApplicationComponent if:"
+          end
+
+          ul class: "list-disc list-inside" do
+            li do
+              plain "You have your own component library with the same component names as PhlexyUI."
+            end
+            li do
+              plain "You're including your own components module in "
+              Code(:ruby, source: "ApplicationComponent", inline: true)
+              plain "."
+            end
+          end
+
+          div do
+            span do
+              plain "In this scenario, including both PhlexyUI and your own component library in "
+              Code(:ruby, source: "ApplicationComponent", inline: true)
+              plain " will lead to naming conflicts."
+            end
           end
 
           p do
