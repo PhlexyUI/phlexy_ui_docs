@@ -8,7 +8,7 @@ module Examples
 
     def view_template(&)
       div class: "space-y-8" do
-        render_modifiers
+        render_modifiers if component.modifiers.any?
 
         yield
       end
