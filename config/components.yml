@@ -1,65 +1,65 @@
 ---
 categories:
   Actions:
-  - Button
-  - Dropdown
-  - Modal
-  - Swap
-  - Theme Controller
+    - Button
+    - Dropdown
+    - Modal
+    - Swap
+    - ThemeController
   Data display:
-  - Badge
-  - Card
-  - Accordion
-  - Avatar
-  - Carousel
-  - Chat Bubble
-  - Collapse
-  - Countdown
-  - Diff
-  - Kbd
-  - Stat
-  - Table
-  - Timeline
+    - Badge
+    - Card
+    - Accordion
+    - Avatar
+    - Carousel
+    - ChatBubble
+    - Collapse
+    - Countdown
+    - Diff
+    - Kbd
+    - Stat
+    - Table
+    - Timeline
   Data Input:
-  - Checkbox
-  - File Input
-  - Radio
-  - Range
-  - Rating
-  - Select
-  - Text input
-  - Textarea
-  - Toggle
-  - FormControl
+    - Checkbox
+    - FileInput
+    - Radio
+    - Range
+    - Rating
+    - Select
+    - TextInput
+    - Textarea
+    - Toggle
+    - FormControl
   Layout:
-  - Artboard
-  - Divider
-  - Drawer
-  - Footer
-  - Hero
-  - Indicator
-  - Join (group items)
-  - Mask
-  - Stack
+    - Artboard
+    - Divider
+    - Drawer
+    - Footer
+    - Hero
+    - Indicator
+    - Join
+    - Mask
+    - Stack
   Mockup:
-  - Browser
-  - Code
-  - Phone
-  - Window
+    - Browser
+    - Code
+    - Phone
+    - Window
   Feedback:
-  - Loading
-  - Alert
-  - Progress
-  - Radial Progress
-  - Skeleton
-  - Toast
-  - Tooltip
+    - Loading
+    - Alert
+    - Progress
+    - RadialProgress
+    - Skeleton
+    - Toast
+    - Tooltip
   Navigation:
-  - Menu
-  - Link
-  - Breadcrumbs
-  - Bottom Navigation
-  - Navbar
-  - Pagination
-  - Steps
-  - Tab
+    - Menu
+    - Link
+    - Breadcrumbs
+    - BottomNavigation
+    - Navbar
+    - Pagination
+    - Steps
+    - Tab
