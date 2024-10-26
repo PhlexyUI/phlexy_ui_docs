@@ -37,7 +37,7 @@ class Component
   end
 
   def to_param
-    name.parameterize
+    name.underscore
   end
 
   def modifiers
