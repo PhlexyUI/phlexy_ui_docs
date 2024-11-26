@@ -7,12 +7,16 @@ class ApplicationLayout < ApplicationView
   include Phlex::Rails::Helpers::TurboFrameTag
   include Phlex::Rails::Helpers::ImagePath
 
+  def initialize(title: nil)
+    @title = title
+  end
+
   def view_template(&block)
     doctype
 
     html class: "overscroll-auto sm:overscroll-y-none", data: {theme: helpers.session[:theme] || :light} do
       head do
-        title { "PhlexyUI Docs" }
+        title { @title || "PhlexyUI Docs" }
         meta name: "viewport", content: "width=device-width,initial-scale=1"
         csp_meta_tag
         csrf_meta_tags
@@ -63,12 +67,12 @@ class ApplicationLayout < ApplicationView
 
         meta(
           name: "apple-mobile-web-app-title",
-          content: "PhlexyUI Docs"
+          content: @title || "PhlexyUI Docs"
         )
 
         meta(
           name: "application-name",
-          content: "PhlexyUI Docs"
+          content: @title || "PhlexyUI Docs"
         )
 
         meta(
@@ -92,7 +96,7 @@ class ApplicationLayout < ApplicationView
         # Facebook meta tags
         meta property: "og:url", content: "https://phlexyui.com/"
         meta property: "og:type", content: "website"
-        meta property: "og:title", content: "PhlexyUI Docs"
+        meta property: "og:title", content: @title || "PhlexyUI Docs"
         meta property: "og:description", content: "PhlexyUI is a component library built with Phlex, a Ruby gem for building fast object-oriented HTML components. On top of DaisyUI, the most popular component library for Tailwind CSS."
         meta property: "og:image", content: image_path("phlexy_ui_og.png")
 
@@ -100,7 +104,7 @@ class ApplicationLayout < ApplicationView
         meta name: "twitter:card", content: "summary_large_image"
         meta property: "twitter:domain", content: "phlexyui.com"
         meta property: "twitter:url", content: "https://phlexyui.com/"
-        meta name: "twitter:title", content: "PhlexyUI Docs"
+        meta name: "twitter:title", content: @title || "PhlexyUI Docs"
         meta name: "twitter:description", content: "PhlexyUI is a component library built with Phlex, a Ruby gem for building fast object-oriented HTML components. On top of DaisyUI, the most popular component library for Tailwind CSS."
         meta name: "twitter:image", content: image_path("phlexy_ui_og.png")
 

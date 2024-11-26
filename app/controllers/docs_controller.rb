@@ -20,4 +20,10 @@ class DocsController < ApplicationController
   def doc_name
     params[:doc_name]
   end
+
+  def title
+    "PhlexyUI - #{doc_name.humanize}"
+  rescue
+    nil
+  end
 end

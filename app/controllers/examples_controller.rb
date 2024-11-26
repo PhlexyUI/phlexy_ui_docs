@@ -24,4 +24,10 @@ class ExamplesController < ApplicationController
   def component
     Component.from_name(component_name.to_s.camelize)
   end
+
+  def title
+    "PhlexyUI - #{component.name}"
+  rescue
+    nil
+  end
 end
