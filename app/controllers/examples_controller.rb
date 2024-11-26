@@ -22,6 +22,6 @@ class ExamplesController < ApplicationController
   end
 
   def component
-    Component.from_name(component_name.to_s.classify)
+    Component.from_name(component_name.to_s.camelize)
   end
 end
