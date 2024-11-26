@@ -1,6 +1,7 @@
 class Sidebar < ApplicationView
   include Phlex::Rails::Helpers::ImageTag
   include Phlex::Rails::Helpers::LinkTo
+  include ActionView::Helpers::DateHelper
 
   def view_template
     aside class: "w-80 bg-base-100 min-h-[100dvh] overscroll-contain" do
@@ -15,8 +16,11 @@ class Sidebar < ApplicationView
           plain "PhlexyUI"
         end
 
-        span class: "mt-2" do
-          "v#{PhlexyUI::VERSION}"
+        span class: "mt-3 flex flex-col" do
+          plain "v#{PhlexyUI::VERSION}"
+          span class: "text-xs text-base-content/70" do
+            plain "#{time_ago_in_words(PhlexyUI::UPDATED_AT)} ago"
+          end
         end
       end
 
