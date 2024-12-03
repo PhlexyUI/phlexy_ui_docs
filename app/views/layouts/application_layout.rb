@@ -21,9 +21,9 @@ class ApplicationLayout < ApplicationView
         csp_meta_tag
         csrf_meta_tags
 
-        plain helpers.vite_client_tag
-        plain helpers.vite_stylesheet_tag("application", data_turbo_track: "reload")
-        plain helpers.vite_javascript_tag("application", data_turbo_track: "reload", type: "module")
+        raw helpers.vite_client_tag
+        raw helpers.vite_stylesheet_tag("application", data_turbo_track: "reload")
+        raw helpers.vite_javascript_tag("application", data_turbo_track: "reload", type: "module")
 
         turbo_refreshes_with method: :morph, scroll: :preserve
 

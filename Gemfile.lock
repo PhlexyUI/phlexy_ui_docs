@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/PhlexyUI/phlexy_ui.git
-  revision: 53f53587886bac0f423f0a92e3af74823290f128
+  revision: eaeaba8b937cb8adf0e5fbda81c9d807c685d7e8
   branch: main
   specs:
-    phlexy_ui (0.1.22)
-      phlex (>= 1.10)
+    phlexy_ui (0.2.0)
+      phlex (>= 2.0.0.rc1)
       zeitwerk (~> 2.6)
 
 GEM
@@ -205,10 +205,10 @@ GEM
       racc
     pg_query (5.1.0)
       google-protobuf (>= 3.22.3)
-    phlex (1.10.3)
-    phlex-rails (1.2.1)
-      phlex (~> 1.10.0)
-      railties (>= 6.1, < 8)
+    phlex (2.0.0.rc1)
+    phlex-rails (2.0.0.rc1)
+      phlex (= 2.0.0.rc1)
+      railties (>= 6.1, < 9)
     prosopite (1.4.2)
     psych (5.1.2)
       stringio
@@ -370,6 +370,7 @@ GEM
 PLATFORMS
   aarch64-linux
   arm64-darwin-23
+  arm64-darwin-24
   x86_64-darwin-18
   x86_64-linux
 
@@ -389,7 +390,7 @@ DEPENDENCIES
   method_source
   name_of_person
   pg_query
-  phlex-rails
+  phlex-rails (~> 2.0.0.rc)
   phlexy_ui!
   prosopite
   puma (>= 5.0)
