@@ -10,7 +10,7 @@ module Examples
       end
 
       def example
-        Checkbox id: :my_checkbox
+        Checkbox id: "my_checkbox"
 
         script do
           <<-JS.html_safe
