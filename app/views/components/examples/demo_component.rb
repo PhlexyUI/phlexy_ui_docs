@@ -39,7 +39,7 @@ module Examples
     def render_header
       header class: "sticky top-[4.5rem] z-10 bg-base-100 pb-4" do
         h2 class: "text-sm font-bold mb-4", id: title.parameterize do
-          link_to "# ", examples_path(component, anchor: title.parameterize)
+          link_to "# ", examples_path(component, anchor: title.parameterize), data: {turbo_frame: :_top}
 
           span do
             title
