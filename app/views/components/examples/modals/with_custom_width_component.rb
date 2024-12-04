@@ -6,11 +6,11 @@ module Examples
       end
 
       def example
-        Button modal: :my_modal_5 do
+        Button modal: "my_modal_5" do
           "open modal"
         end
 
-        Modal :tap_outside_to_close, id: :my_modal_5 do |modal|
+        Modal :tap_outside_to_close, id: "my_modal_5" do |modal|
           modal.body class: "w-11/12 max-w-5xl" do
             h3 class: "text-lg font-bold" do
               "Hello!"

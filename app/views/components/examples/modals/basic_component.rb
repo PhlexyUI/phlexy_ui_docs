@@ -10,11 +10,11 @@ module Examples
       end
 
       def example
-        Button modal: :my_modal_1 do
+        Button modal: "my_modal_1" do
           "open modal"
         end
 
-        Modal id: :my_modal_1 do |modal|
+        Modal id: "my_modal_1" do |modal|
           modal.body do
             h3 class: "text-lg font-bold" do
               "Hello!"

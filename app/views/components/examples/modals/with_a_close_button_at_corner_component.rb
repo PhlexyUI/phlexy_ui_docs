@@ -6,11 +6,11 @@ module Examples
       end
 
       def example
-        Button modal: :my_modal_4 do
+        Button modal: "my_modal_4" do
           "open modal"
         end
 
-        Modal id: :my_modal_4 do |modal|
+        Modal id: "my_modal_4" do |modal|
           modal.body do
             modal.close_button :sm, :circle, :ghost, class: "absolute right-2 top-2" do
               "✕"
