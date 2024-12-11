@@ -98,7 +98,7 @@ class ApplicationLayout < ApplicationView
         meta property: "og:type", content: "website"
         meta property: "og:title", content: @title || "PhlexyUI Docs"
         meta property: "og:description", content: "PhlexyUI is a component library built with Phlex, a Ruby gem for building fast object-oriented HTML components. On top of DaisyUI, the most popular component library for Tailwind CSS."
-        meta property: "og:image", content: image_path("phlexy_ui_og.png")
+        meta property: "og:image", content: "https://opengraph.b-cdn.net/production/images/a762fb82-9327-4beb-b556-cbd4af8e0bbc.png?token=93YAu2i2tElEJNknMrJ5s_LCoXfcDk2mRLf5Ey1WkZ8&height=630&width=1200&expires=33269950416"
 
         # X meta tags
         meta name: "twitter:card", content: "summary_large_image"
@@ -106,7 +106,7 @@ class ApplicationLayout < ApplicationView
         meta property: "twitter:url", content: "https://phlexyui.com/"
         meta name: "twitter:title", content: @title || "PhlexyUI Docs"
         meta name: "twitter:description", content: "PhlexyUI is a component library built with Phlex, a Ruby gem for building fast object-oriented HTML components. On top of DaisyUI, the most popular component library for Tailwind CSS."
-        meta name: "twitter:image", content: image_path("phlexy_ui_og.png")
+        meta name: "twitter:image", content: "https://opengraph.b-cdn.net/production/images/a762fb82-9327-4beb-b556-cbd4af8e0bbc.png?token=93YAu2i2tElEJNknMrJ5s_LCoXfcDk2mRLf5Ey1WkZ8&height=630&width=1200&expires=33269950416"
 
         yield :head
       end
