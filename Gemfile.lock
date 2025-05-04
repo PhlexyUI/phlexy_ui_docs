@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/PhlexyUI/phlexy_ui.git
-  revision: a15e03b50926fdeddfca829ecc2dce28bffe4713
+  revision: de6ab776b90fce3302968ad2b870dbc6fff9c4a7
   branch: main
   specs:
-    phlexy_ui (0.2.1)
+    phlexy_ui (0.2.2)
       phlex (>= 2.0.0.rc1)
       zeitwerk (~> 2.6)
 
@@ -365,7 +365,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.1)
+    zeitwerk (2.7.2)
 
 PLATFORMS
   aarch64-linux
