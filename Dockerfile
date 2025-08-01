@@ -17,8 +17,10 @@ ENV BUNDLE_DEPLOYMENT="1" \
     RAILS_ENV="production"
 
 # Update gems and bundler
-RUN gem update --system --no-document && \
-    gem install -N bundler
+# Temporarily disabled to fix bundler path issues
+# RUN gem update --system --no-document && \
+#     gem install -N bundler
+RUN gem install bundler:2.5.14 --no-document
 
 
 # Throw-away build stage to reduce size of final image
@@ -51,7 +53,7 @@ COPY --link . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
 
 
 # Final stage for app image
