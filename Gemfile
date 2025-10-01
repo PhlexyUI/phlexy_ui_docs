@@ -65,7 +65,7 @@ group :development, :test do
   gem "dotenv"
   gem "rspec-rails", "~> 6.1.0"
   gem "prosopite"
-  gem "pg_query"
+  gem "pg_query", "~> 6.0"
 end
 
 group :development do
